@@ -15,7 +15,7 @@ int main() {
     char password[50];
     char fixPassword[10] = "Panjiee22";
     
-    printf("----------Welcome to authentication system----------\n\n");
+    printf("\n----------Welcome to authentication system----------\n\n");
     
     
     printf("Enter your email: ");
