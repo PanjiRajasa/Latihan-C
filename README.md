@@ -1,2 +1,3 @@
 # Latihan-C
-Test222
+Test222 \n
+Halo
