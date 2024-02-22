@@ -13,7 +13,7 @@ int main() {
 
     struct user user;
     char password[50];
-    char fixPassword[10] = "Panjiee22";
+    char fixPassword[40] = "C Game Shop";
     
     printf("\n----------Welcome to authentication system----------\n\n");
     
@@ -33,6 +33,56 @@ int main() {
     else {
         printf("\nPassword confirmation failed. Please try again.\n");
     }
+
+    int pilihan;
+
+    printf("Pilih metode pembayaran: \n");
+    printf("1. Visa \n");
+    printf("2. MasterCard \n");
+    printf("3. Dana \n");
+    printf("4. Linkaja \n");
+    printf("Masukkan pilihan Anda (1-4): ");
+    scanf("%d", &pilihan);
+
+    switch (pilihan) {
+        case 1:
+        case 2:
+            {
+                int nomorKartuKredit, pin;
+
+                printf("Masukkan nomor kartu kredit: ");
+                scanf("%d", &nomorKartuKredit);
+                printf("Masukkan PIN: ");
+                scanf("%d", &pin);
+
+                // Lakukan proses konfirmasi untuk metode pembayaran Visa atau MasterCard
+                // ...
+
+                break;
+            }
+        case 3:
+        case 4:
+            {
+                char email[100], password[100];
+                int nomorTelepon;
+
+                printf("Masukkan email: ");
+                scanf("%s", email);
+                printf("Masukkan password: ");
+                scanf("%s", password);
+                printf("Masukkan nomor telepon: ");
+                scanf("%d", &nomorTelepon);
+
+                // Lakukan proses konfirmasi untuk metode pembayaran Dana atau Linkaja
+                // ...
+
+
+                break;
+            }
+        default:
+            printf("Pilihan tidak valid.\n");
+            break;
     
 return 0;
+}
 }
