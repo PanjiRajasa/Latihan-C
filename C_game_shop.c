@@ -17,28 +17,29 @@ struct CartItem {
 };
 
 void displayGames(struct Game games[], int count) {
-    printf("\nDaftar Game yang Tersedia:\n");
-    printf("----------------------------\n");
+    printf("| ----------------------------- |\n");
+    printf("|  Daftar Game yang Tersedia:   |\n");
     for (int i = 0; i < count; i++) {
         printf("%d. %s\n", i + 1, games[i].title);
     }
-    printf("----------------------------\n");
+    printf("| ----------------------------- |\n");
 }
 
 void displayRecommendedGames() {
-    printf("\nGame Rekomendasi:\n");
-    printf("----------------------------\n");
-    printf("1. The Witcher 3: Wild Hunt\n");
-    printf("2. Red Dead Redemption 2\n");
-    printf("3. Cyberpunk 2077\n");
-    printf("4. Assassin's Creed Valhalla\n");
-    printf("5. Grand Theft Auto V\n");
-    printf("6. Sekiro: Shadows Die Twice\n");
-    printf("7. The Last of Us Part II\n");
-    printf("8. Doom Eternal\n");
-    printf("9. Among Us\n");
-    printf("10. Fall Guys: Ultimate Knockout\n");
-    printf("----------------------------\n");
+    printf("| ---------------------------------- |\n");
+    printf("|          Game Rekomendasi:         |\n");
+    printf("| ---------------------------------- |\n");
+    printf("| 1. The Witcher 3: Wild Hunt        |\n");
+    printf("| 2. Red Dead Redemption 2           |\n");
+    printf("| 3. Cyberpunk 2077                  |\n");
+    printf("| 4. Assassin's Creed Valhalla       |\n");
+    printf("| 5. Grand Theft Auto V              |\n");
+    printf("| 6. Sekiro: Shadows Die Twice       |\n");
+    printf("| 7. The Last of Us Part II          |\n");
+    printf("| 8. Doom Eternal                    |\n");
+    printf("| 9. Among Us                        |\n");
+    printf("| 10. Fall Guys: Ultimate Knockout   |\n");
+    printf("| ---------------------------------- |\n");
 }
 
 void addToCart(struct Game game, struct CartItem cart[], int *cartSize) {
@@ -47,28 +48,32 @@ void addToCart(struct Game game, struct CartItem cart[], int *cartSize) {
 }
 
 void displayCart(struct CartItem cart[], int cartSize) {
-    printf("\nIsi Keranjang Belanja Anda:\n");
-    printf("------------------------------------\n");
+    printf("| ============================= |\n");
+    printf("|  Isi Keranjang Belanja Anda:  |\n");
     for (int i = 0; i < cartSize; i++) {
         printf("%d. %s\n", i + 1, cart[i].game.title);
     }
-    printf("------------------------------------\n");
+    printf("| ============================= |\n");
 }
 
 void displayReceipt(struct CartItem cart[], int cartSize) {
-    printf("\nNota Pembelian Anda:\n");
-    printf("------------------------------------\n");
-    printf("No   | Game\n");
-    printf("------------------------------------\n");
+    printf("| ----------------------------------- |\n");
+    printf("|          Nota Pembelian Anda:       |\n");
+    printf("| ----------------------------------- |\n");
+    
+    printf("| ----------------------------------- |\n");
+    printf("|             No   |  Game            |\n");
+    printf("| ----------------------------------- |\n");
     for (int i = 0; i < cartSize; i++) {
         printf("%-5d| %-20s\n", i + 1, cart[i].game.title);
     }
-    printf("------------------------------------\n");
+    printf("| ----------------------------------- |\n");
 }
 
 void searchGame(struct Game games[], int count, char keyword[]) {
-    printf("\nHasil Pencarian:\n");
-    printf("----------------------------\n");
+    printf("| ------------------ |\n");
+    printf("|  Hasil Pencarian:  \n");
+    printf("| ------------------ |\n");
     bool found = false;
     for (int i = 0; i < count; i++) {
         if (strstr(games[i].title, keyword) != NULL) {
@@ -79,26 +84,30 @@ void searchGame(struct Game games[], int count, char keyword[]) {
     if (!found) {
         printf("Tidak ada game yang cocok dengan kata kunci tersebut.\n");
     }
-    printf("----------------------------\n");
+    printf("| ------------------ |\n");
 }
 
 int main() {
-    //system("color 0b");
+    system("color 0b");
 
     struct User user;
     char fixPassword[] = "C Game Shop";
     struct CartItem cart[10];
     int cartSize = 0;
 
-    printf("\n----------Welcome to the authentication system----------\n\n");
+    printf("\n---------- Welcome to the authentication system ----------\n\n");
 
-    printf("Enter your email: ");
+    printf("| ---------------- |\n");
+    printf("| Enter your email: ");
     fgets(user.email, sizeof(user.email), stdin);
     user.email[strcspn(user.email, "\n")] = '\0';
+    printf("| ---------------- |\n");
 
-    printf("Enter your password: ");
+    printf("\n| ---------------- |\n");
+    printf("| Enter your password: ");
     fgets(user.password, sizeof(user.password), stdin);
     user.password[strcspn(user.password, "\n")] = '\0';
+    printf("| ---------------- |\n");
 
     if (strcmp(user.password, fixPassword) == 0) {
         printf("\nLogin successful!\n");
@@ -156,24 +165,31 @@ int main() {
 
         int pilihan;
 
-        printf("\nPilih metode pembayaran: \n");
-        printf("1. Visa \n");
-        printf("2. MasterCard \n");
-        printf("3. Dana \n");
-        printf("4. Linkaja \n");
-        printf("Masukkan pilihan Anda (1-4): ");
+        printf("| --------------------------- |\n");
+        printf("|   Pilih metode pembayaran:  |\n");
+        printf("|          1. Visa            |\n");
+        printf("|          2. MasterCard      |\n");
+        printf("|          3. Dana            |\n");
+        printf("|          4. Linkaja         |\n");
+        printf("| Masukkan pilihan Anda (1-4): ");
         scanf("%d", &pilihan);
         getchar();
+        printf("| --------------------------- |\n");
 
        switch (pilihan) {
             case 1:
                 {
                     int nomorKartuKredit, pin;
 
-                    printf("Masukkan nomor kartu kredit: ");
+                    printf("| ---------------------------- |\n");
+                    printf("| Masukkan nomor kartu kredit: ");
                     scanf("%d", &nomorKartuKredit);
-                    printf("Masukkan PIN: ");
+                    printf("| ---------------------------- |\n");
+                    
+                    printf("\n| ----------- |\n");
+                    printf("| Masukkan PIN: ");
                     scanf("%d", &pin);
+                    printf("| ----------- |\n");
 
                     printf("\nPembayaran dengan Visa berhasil!\n");
 
@@ -185,10 +201,15 @@ int main() {
                 {
                     int nomorKartuKredit, pin;
 
-                    printf("Masukkan nomor kartu kredit: ");
+                    printf("| ---------------------------- |\n");
+                    printf("| Masukkan nomor kartu kredit: ");
                     scanf("%d", &nomorKartuKredit);
+                    printf("| ---------------------------- |\n");
+                    
+                    printf("\n| ----------- |\n");
                     printf("Masukkan PIN: ");
                     scanf("%d", &pin);
+                    printf("| ----------- |\n");
 
                     printf("\nPembayaran dengan MasterCard berhasil!\n");
 
@@ -201,12 +222,20 @@ int main() {
                     char email[100], password[100];
                     int nomorTelepon;
 
-                    printf("Masukkan email: ");
+                    printf("| ---------------- |\n");
+                    printf("| Masukkan email: ");
                     scanf("%s", email);
-                    printf("Masukkan password: ");
+                    printf("| ---------------- |\n");
+                    
+                    printf("\n| ----------------- |\n");
+                    printf("| Masukkan password: ");
                     scanf("%s", password);
-                    printf("Masukkan nomor telepon: ");
+                    printf("| ----------------- |\n");
+                    
+                    printf("\n| ---------------------- |\n");
+                    printf("| Masukkan nomor telepon: ");
                     scanf("%d", &nomorTelepon);
+                    printf("| ---------------------- |\n");
 
                     printf("\nPembayaran dengan Dana berhasil!\n");
 
@@ -219,12 +248,20 @@ int main() {
                     char email[100], password[100];
                     int nomorTelepon;
 
-                    printf("Masukkan email: ");
+                    printf("| ---------------- |\n");
+                    printf("| Masukkan email: ");
                     scanf("%s", email);
-                    printf("Masukkan password: ");
+                    printf("| ---------------- |\n");
+                    
+                    printf("\n| ----------------- |\n");
+                    printf("| Masukkan password: ");
                     scanf("%s", password);
-                    printf("Masukkan nomor telepon: ");
+                    printf("| ----------------- |\n");
+                    
+                    printf("\n| ---------------------- |\n");
+                    printf("| Masukkan nomor telepon: ");
                     scanf("%d", &nomorTelepon);
+                    printf("| ---------------------- |\n");
 
                     printf("\nPembayaran dengan Linkaja berhasil!\n");
 
@@ -243,4 +280,3 @@ int main() {
 
     return 0;
 }
- 
