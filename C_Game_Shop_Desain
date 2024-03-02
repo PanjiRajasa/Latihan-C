@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+// Pembuatan struct
 struct User {
     char email[50];
     char password[50];
@@ -16,15 +17,8 @@ struct CartItem {
     struct Game game;
 };
 
-void displayGames(struct Game games[], int count) {
-    printf("| ----------------------------- |\n");
-    printf("|  Daftar Game yang Tersedia:   |\n");
-    for (int i = 0; i < count; i++) {
-        printf("%d. %s\n", i + 1, games[i].title);
-    }
-    printf("| ----------------------------- |\n");
-}
 
+// Fungsi untuk game rekomendasi
 void displayRecommendedGames() {
     printf("| ---------------------------------- |\n");
     printf("|          Game Rekomendasi:         |\n");
@@ -42,20 +36,22 @@ void displayRecommendedGames() {
     printf("| ---------------------------------- |\n");
 }
 
+// untuk menambahkan game ke cart
+/*
+struct Game game
+struct CartItem cart[]
+adalah variabel struct
+
+int *cartSize 
+adalah variabel pointer dengan tipe data int
+*/
+
 void addToCart(struct Game game, struct CartItem cart[], int *cartSize) {
     cart[*cartSize].game = game;
     (*cartSize)++;
 }
 
-void displayCart(struct CartItem cart[], int cartSize) {
-    printf("| ============================= |\n");
-    printf("|  Isi Keranjang Belanja Anda:  |\n");
-    for (int i = 0; i < cartSize; i++) {
-        printf("%d. %s\n", i + 1, cart[i].game.title);
-    }
-    printf("| ============================= |\n");
-}
-
+// menampilkan nota
 void displayReceipt(struct CartItem cart[], int cartSize) {
     printf("| ----------------------------------- |\n");
     printf("|          Nota Pembelian Anda:       |\n");
@@ -64,38 +60,31 @@ void displayReceipt(struct CartItem cart[], int cartSize) {
     printf("| ----------------------------------- |\n");
     printf("|             No   |  Game            |\n");
     printf("| ----------------------------------- |\n");
+    
+    /*
+    Dalam bahasa C, format specifier "%-5d" digunakan dalam fungsi printf() untuk mencetak nilai integer 
+    dengan lebar field sebesar 5 karakter dan dengan penjajaran ke kiri (left-justified).
+    
+    Dalam bahasa C, format specifier "%-20s" digunakan dalam fungsi printf() untuk mencetak string dengan 
+    lebar field sebesar 20 karakter dan dengan penjajaran ke kiri (left-justified).
+    */
+    
     for (int i = 0; i < cartSize; i++) {
         printf("%-5d| %-20s\n", i + 1, cart[i].game.title);
     }
     printf("| ----------------------------------- |\n");
 }
 
-void searchGame(struct Game games[], int count, char keyword[]) {
-    printf("| ------------------ |\n");
-    printf("|  Hasil Pencarian:  \n");
-    printf("| ------------------ |\n");
-    bool found = false;
-    for (int i = 0; i < count; i++) {
-        if (strstr(games[i].title, keyword) != NULL) {
-            printf("%d. %s\n", i + 1, games[i].title);
-            found = true;
-        }
-    }
-    if (!found) {
-        printf("Tidak ada game yang cocok dengan kata kunci tersebut.\n");
-    }
-    printf("| ------------------ |\n");
-}
 
 int main() {
-    system("color 0b");
+    // system("color 0b");
 
     struct User user;
     char fixPassword[] = "C Game Shop";
     struct CartItem cart[10];
     int cartSize = 0;
 
-    printf("\n---------- Welcome to the authentication system ----------\n\n");
+    printf("\n---------- Welcome to C Game Shop ----------\n\n");
 
     printf("| ---------------- |\n");
     printf("| Enter your email: ");
@@ -110,7 +99,7 @@ int main() {
     printf("| ---------------- |\n");
 
     if (strcmp(user.password, fixPassword) == 0) {
-        printf("\nLogin successful!\n");
+        printf("\nLogin Berhasil!\n");
 
         displayRecommendedGames();
 
@@ -161,7 +150,12 @@ int main() {
             getchar();
         } while (choice == 'y' || choice == 'Y');
 
-        displayCart(cart, cartSize);
+        printf("| ============================= |\n");
+        printf("|  Isi Keranjang Belanja Anda:  |\n");
+        for (int i = 0; i < cartSize; i++) {
+            printf("%d. %s\n\n", i + 1, cart[i].game.title);
+        }
+        printf("| ============================= |\n");
 
         int pilihan;
 
@@ -275,7 +269,7 @@ int main() {
         }
     }
     else {
-        printf("\nLogin failed. Please try again.\n");
+        printf("\nLogin gagal. Pastikan input password atau email anda sudah benar!\n");
     }
 
     return 0;
