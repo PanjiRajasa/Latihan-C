@@ -33,6 +33,16 @@ void displayRecommendedGames() {
     printf("| 8. Doom Eternal                    |\n");
     printf("| 9. Among Us                        |\n");
     printf("| 10. Fall Guys: Ultimate Knockout   |\n");
+    printf("| 11. Dota 2                         |\n");
+    printf("| 12. Apex Legends                   |\n");
+    printf("| 13. Counter-Strike 2               |\n");
+    printf("| 14. Palworld                       |\n");
+    printf("| 15. Tekken 8                       |\n");
+    printf("| 16. Elden Ring                     |\n");
+    printf("| 17. Destiny 2                      |\n");
+    printf("| 18. Rust                           |\n");
+    printf("| 19. Monster Hunter: World          |\n");
+    printf("| 20. Supermarket: toko berguna      |\n");
     printf("| ---------------------------------- |\n");
 }
 
@@ -125,9 +135,19 @@ int main() {
                     {"The Last of Us Part II"},
                     {"Doom Eternal"},
                     {"Among Us"},
-                    {"Fall Guys: Ultimate Knockout"}
+                    {"Fall Guys: Ultimate Knockout"},
+                    {"Dota 2"},
+                    {"Apex Legends"},
+                    {"Counter-Strike 2"},
+                    {"Palworld"},
+                    {"Tekken 8"},
+                    {"Elden Ring"},
+                    {"Destiny 2"},
+                    {"Rust"},
+                    {"Monster Hunter: World"},
+                    {"Supermarket: toko berguna"}
                 };
-                if (gameNumber >= 1 && gameNumber <= 10) {
+                if (gameNumber >= 1 && gameNumber <= 20) {
                     addToCart(recommendedGames[gameNumber - 1], cart, &cartSize);
                     printf("Game telah ditambahkan ke keranjang.\n");
                 } else {
