@@ -1,0 +1,104 @@
+##Pseudocode ini untuk logika program ya...
+
+Pseudocode dari function addToCart dan displayReceipt:
+
+Function addToCart(game, cart, cartSize):
+    cart[cartSize].game = game
+    cartSize += 1
+
+Function displayReceipt(cart, cartSize):
+    Print "-----------------------------------"
+    Print "         Nota Pembelian Anda:       "
+    Print "-----------------------------------"
+    Print "-----------------------------------"
+    Print "             No   |  Game            "
+    Print "-----------------------------------"
+    Untuk setiap i dari 0 hingga cartSize - 1:
+        Cetak i + 1, "     ", cart[i].game.title
+    Cetak "-----------------------------------"
+
+Pseudocode untuk main function:
+
+Function main():
+    Print "---------- Welcome to C Game Shop ----------"
+    Deklarasikan variabel user dengan tipe struct User
+    Deklarasikan variabel fixPassword dengan string "C Game Shop"
+    Deklarasikan array cart dengan 20 elemen bertipe struct CartItem
+    Inisialisasikan variabel cartSize dengan nilai 0
+
+    Print "Enter your email: "
+    Baca input email dari pengguna dan simpan dalam user.email
+    Hapus karakter newline dari akhir input email
+    Cetak "Enter your password: "
+    Baca input password dari pengguna dan simpan dalam user.password
+    Hapus karakter newline dari akhir input password
+
+    Jika password yang dimasukkan oleh pengguna sama dengan fixPassword, maka:
+        Cetak "Login Berhasil!"
+        Panggil fungsi displayRecommendedGames()
+
+        Deklarasikan variabel choice dengan tipe char
+        Lakukan perulangan do-while, dengan kondisi bahwa pengguna ingin membeli lagi:
+            Cetak "Apakah Anda ingin membeli game rekomendasi? (y/n): "
+            Baca pilihan dari pengguna dan simpan dalam choice
+            Jika pilihan adalah 'y' atau 'Y', maka:
+                Cetak "Masukkan nomor game rekomendasi yang ingin Anda beli: "
+                Baca nomor game yang dipilih oleh pengguna
+                Deklarasikan array recommendedGames dan inisialisasikan dengan game rekomendasi yang tersedia
+
+                Jika nomor game valid, maka:
+                    Tambahkan game yang dipilih ke dalam keranjang belanja (cart) menggunakan fungsi addToCart()
+                Jika nomor game tidak valid, maka:
+                    Cetak "Nomor game tidak valid."
+
+            Jika pilihan adalah 'n' atau 'N', maka:
+                Cetak "Masukkan nama game yang ingin dibeli: "
+                Baca keyword pencarian dari pengguna
+                Deklarasikan variabel newGame bertipe struct Game dan inisialisasikan dengan keyword pencarian
+                Tambahkan game yang dipilih ke dalam keranjang belanja (cart) menggunakan fungsi addToCart()
+
+            Cetak "Apakah Anda ingin membeli lagi? (y/n): "
+            Baca pilihan dari pengguna dan simpan dalam choice
+
+        Cetak "Isi Keranjang Belanja Anda:"
+        Untuk setiap elemen dalam cart, cetak nomor dan judul game
+
+        Cetak "Pilih metode pembayaran:"
+        Cetak "1. Visa"
+        Cetak "2. MasterCard"
+        Cetak "3. Dana"
+        Cetak "4. Linkaja"
+        Baca pilihan pembayaran dari pengguna
+
+        Lakukan switch-case berdasarkan pilihan pembayaran:
+            Case 1: (Visa)
+                Baca nomor kartu kredit dan PIN dari pengguna
+                Cetak "Pembayaran dengan Visa berhasil!"
+                Tampilkan nota pembelian menggunakan fungsi displayReceipt()
+                Break
+
+            Case 2: (MasterCard)
+                Baca nomor kartu kredit dan PIN dari pengguna
+                Cetak "Pembayaran dengan MasterCard berhasil!"
+                Tampilkan nota pembelian menggunakan fungsi displayReceipt()
+                Break
+
+            Case 3: (Dana)
+                Baca email, password, dan nomor telepon dari pengguna
+                Cetak "Pembayaran dengan Dana berhasil!"
+                Tampilkan nota pembelian menggunakan fungsi displayReceipt()
+                Break
+
+            Case 4: (Linkaja)
+                Baca email, password, dan nomor telepon dari pengguna
+                Cetak "Pembayaran dengan Linkaja berhasil!"
+                Tampilkan nota pembelian menggunakan fungsi displayReceipt()
+                Break
+
+            Default:
+                Cetak "Pilihan tidak valid."
+
+    Jika password yang dimasukkan oleh pengguna tidak sama dengan fixPassword, maka:
+        Cetak "Login gagal. Pastikan input password atau email anda sudah benar!"
+
+    Return 0
