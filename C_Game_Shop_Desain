@@ -58,7 +58,7 @@ adalah variabel pointer dengan tipe data int
 
 void addToCart(struct Game game, struct CartItem cart[], int *cartSize) {
     cart[*cartSize].game = game;
-    (*cartSize)++;
+    *cartSize += 1;
 }
 
 // menampilkan nota
@@ -91,7 +91,7 @@ int main() {
 
     struct User user;
     char fixPassword[] = "C Game Shop";
-    struct CartItem cart[10];
+    struct CartItem cart[20];
     int cartSize = 0;
 
     printf("\n---------- Welcome to C Game Shop ----------\n\n");
@@ -122,6 +122,7 @@ int main() {
             if (choice == 'y' || choice == 'Y') {
                 printf("\nMasukkan nomor game rekomendasi yang ingin Anda beli: ");
                 int gameNumber;
+                
                 scanf("%d", &gameNumber);
                 getchar();
 
@@ -147,21 +148,28 @@ int main() {
                     {"Monster Hunter: World"},
                     {"Supermarket: toko berguna"}
                 };
+                
                 if (gameNumber >= 1 && gameNumber <= 20) {
+                    
                     addToCart(recommendedGames[gameNumber - 1], cart, &cartSize);
                     printf("Game telah ditambahkan ke keranjang.\n");
+                    
                 } else {
                     printf("Nomor game tidak valid.\n");
                 }
             } else {
                 printf("\nMasukkan nama game yang ingin dibeli: ");
+                
                 char keyword[100];
+                
                 fgets(keyword, sizeof(keyword), stdin);
                 keyword[strcspn(keyword, "\n")] = '\0';
 
                 struct Game newGame;
                 strcpy(newGame.title, keyword);
+                
                 addToCart(newGame, cart, &cartSize);
+                
                 printf("Game telah ditambahkan ke keranjang.\n");
             }
 
