@@ -91,7 +91,7 @@ int main() {
 
     struct User user;
     char fixPassword[] = "C Game Shop";
-    struct CartItem cart[10];
+    struct CartItem cart[20];
     int cartSize = 0;
 
     printf("\n---------- Welcome to C Game Shop ----------\n\n");
