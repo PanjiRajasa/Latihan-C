@@ -1,6 +1,6 @@
 Algoritma C Game Shop:
 
-• Bahasa sehari-hari:
+��• Bahasa sehari-hari:
 
 1. Mulai
 2. input email
@@ -87,3 +87,41 @@ Algoritma C Game Shop:
 • Flowchart:
 Ada di foto
 
+• Pseudocode :
+
+
+1. Buat struct User dengan atribut email dan password
+2. Buat struct Game dengan atribut title
+3. Buat struct CartItem yang berisi struct Game
+4. Buat fungsi displayRecommendedGames() untuk menampilkan game rekomendasi
+5. Buat fungsi addToCart() untuk menambahkan game ke dalam keranjang
+6. Buat fungsi displayReceipt() untuk menampilkan nota pembelian
+7. Di dalam fungsi main:
+    a. Buat variabel struct User, fixPassword, array of struct CartItem, dan cartSize
+    b. Tampilkan pesan selamat datang
+    c. Mintalah pengguna memasukkan email dan password
+    d. Jika password yang dimasukkan sesuai dengan fixPassword:
+        i. Tampilkan pesan login berhasil
+        ii. Tampilkan game rekomendasi
+        iii. Lakukan loop untuk meminta pengguna membeli game atau tidak
+        iv. Jika pengguna ingin membeli game:
+            1. Mintalah pengguna memasukkan nomor game rekomendasi
+            2. Tambahkan game ke dalam keranjang jika nomor game valid
+        v. Jika pengguna ingin membeli game lain:
+            1. Mintalah pengguna memasukkan nama game yang ingin dibeli
+            2. Tambahkan game baru ke dalam keranjang
+        vi. Tampilkan isi keranjang belanja
+        vii. Mintalah pengguna memilih metode pembayaran
+        viii. Lakukan switch case untuk masing-masing metode pembayaran:
+            - Jika metode pembayaran adalah Visa:
+                1. Mintalah pengguna memasukkan nomor kartu kredit dan PIN
+                2. Tampilkan pesan pembayaran berhasil dan tampilkan nota pembelian
+            - Jika metode pembayaran adalah MasterCard:
+                1. Mintalah pengguna memasukkan nomor kartu kredit dan PIN
+                2. Tampilkan pesan pembayaran berhasil dan tampilkan nota pembelian
+            - Jika metode pembayaran adalah Dana atau Linkaja:
+                1. Mintalah pengguna memasukkan email, password, dan nomor telepon
+                2. Tampilkan pesan pembayaran berhasil dan tampilkan nota pembelian
+    e. Jika password yang dimasukkan tidak sesuai dengan fixPassword:
+        - Tampilkan pesan login gagal
+8. Selesai
