@@ -1,0 +1,88 @@
+Algoritma C Game Shop:
+
+• Bahasa sehari-hari:
+
+1. Mulai
+2. input email
+3. input password
+4. jika password benar:
+
+5. tampilkan game rekomendasi
+6. input pilihan, mau pilih game rekomendasi/ tidak
+7. jika pilih game rekomendasi:
+
+8. Masukkan nomor game rekomendasi
+9. Jika nomor game yang dituju ada:
+
+10. Game ditambahkan ke dalam keranjang
+11. input pilihan, mau beli lagi atau tidak
+12. jika tidak mau beli lagi:
+
+13. tampilkan isi keranjang
+14. input metode pembayaran:
+
+                  1. Visa          
+                  2. MasterCard      
+                  3. Dana           
+                  4. Linkaja         
+
+15. jika pilihan angka 1 - 4:
+
+16.1 Jika pilih 1:
+
+16.1.1 Input nomor kartu kredit, pin
+16.1.2 Pembayaran Visa selesai
+16.1.3 Selesai
+
+16.2 Jika pilih 2:
+
+16.2.1 Input nomor kartu kredit, pin
+16.2.2 Pembayaran Mastercard selesai
+16.2.3 Selesai
+
+16.3 Jika pilih 3:
+
+16.3.1 Input email, password, nomor telepon
+16.3.2 Pembayaran Dana selesai
+16.3.3 Selesai
+
+16.4 Jika pilih 4:
+
+16.4.1 Input email, password, nomor telepon
+16.4.2 Pembayaran Linkaja selesai
+16.4.3 Selesai
+
+
+■ //Cabang If//
+
+4.1 jika password salah:
+
+4.1.1 Login gagal
+4.1.2 Program dihentikan
+4.1.3 selesai
+
+
+7.1 jika tidak pilih game rekomendasi:
+
+7.1.1 Input nama game yang ingin dibeli
+7.1.2 Game ditambahkan ke dalam keranjang
+7.1.3 Kembali ke langkah 11
+
+
+9.1 Jika nomor game yang dituju tidak ada:
+9.1.1 Kembali ke langkah 6
+
+
+12.1 jika mau beli lagi:
+12.1.1 Kembali ke langkah 6
+
+
+14.1 jika pilih metode pembayaran yang tidak ada (bukan 1-4):
+
+14.1.1 Pilihan tidak valid, pembayaran batal
+14.1.2 Program dihentikan 
+14.1.3 Selesai
+
+
+• Flowchart:
+Ada di foto
