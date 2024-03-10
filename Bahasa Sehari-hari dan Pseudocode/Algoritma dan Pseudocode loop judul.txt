@@ -1,0 +1,45 @@
+**Algoritma dan pseudocode loop penampil judul program**
+
+Bahasa sehari-hari:
+
+Mulai
+
+deklarasi variabel i,j,rows = 5,cols = 13
+
+deklarasi variabel two dimensional array yang menampilkan judul teks dengan ukuran [5][13]
+
+set variabel i = 0
+set variabel j = 0
+
+selama i < rows maka jalankan kondisi kedua selama j < cols maka tampilkan dimensional array sebanyak baris dan kolomnya 
+
+Selesai
+
+
+Pseudocode:
+
+Start
+
+int i, j;
+int rows = 5;
+int cols = 13;
+
+char c_game_shop[5][13] = <<Tampilan Judul>>;
+
+i == 0;
+j == 0;
+
+
+every(i < rows) {
+
+  every(j < cols) {
+   display >> c_game_shop[i][j];
+    
+   j++;
+  }
+
+   i++;
+  
+}
+
+End
