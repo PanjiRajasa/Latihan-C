@@ -88,7 +88,31 @@ void displayReceipt(struct CartItem cart[], int cartSize) {
 
 int main() {
     // system("color 0b");
-
+    
+    //Start Penampil Judul
+    
+    int i, j;
+    int rows = 5;
+    int cols = 13;
+    
+    
+    char c_game_shop[5][13] = {
+        {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
+        {'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+        {'*', 'C', ' ', 'G', 'A', 'M', 'E', ' ', 'S', 'H', 'O', 'P', '*'},
+        {'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+        {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'}
+    };
+    
+    //End Penampil Judul
+    
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            printf("%c ", c_game_shop[i][j]);
+        }
+        printf("\n");
+    }
+    
     struct User user;
     char fixPassword[] = "C Game Shop";
     struct CartItem cart[20];
