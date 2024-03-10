@@ -1,2 +1,6 @@
+Baca dulu:
+
 Nama file: C_game_shop.c
 Password saat login: C Game Shop
+
+Kalau input password gagal maka tidak bisa masuk ke sistem!
