@@ -1,2 +1,2 @@
-# Latihan-C
+# Project C Game Shop
 
