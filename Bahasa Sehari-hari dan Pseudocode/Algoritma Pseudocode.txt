@@ -1,0 +1,166 @@
+**Pseudocode Untuk C Game Shop**
+
+1. Start
+2. include <library stdio.h, string.h, stdbool.h, stdlib.h>
+
+
+3. structure User = email, password;
+4. structure Game = title;
+5. structure CartItem = variabel game(isinya struct game);
+
+6. fungsi tampilkanGameRekomendasi() {
+
+display(game_Rekomendasi);
+
+}
+
+7. fungsi tambahkanKeKeranjang(structure Game variabel game, structure CartItem variabel cart[], int *cartSize) {
+
+var cart[sebanyak n-*cartSize].property_game = game;
+*cartSize += 1;
+
+}
+
+8. fungsi tampilkanNota(structure CartItem variabel cart[], int cartSize) {
+
+setiap ( awal int i = 0; jika i < cartSize; i += 1 setiap iterasi) {
+
+tampil(cart[sebanyak n-i].property_game.property_title);
+
+}
+
+}
+
+9. fungsi main() {
+
+structure User variabel user;
+char fixPassword[] = "C Game Shop";
+structure CartItem variabel cart[20];
+int cartSize = 0;
+
+input << email;
+input << password;
+
+if(user.property_password == fixPassword) {
+
+tampilkanGameRekomendasi();
+
+char choice;
+
+do {
+
+input << choice;
+
+    if(choice == "y") {
+
+       int gameNumber;
+       
+       input << gameNumber;
+
+       structure Game variabel recommendedGames[] = {
+
+	            {"The Witcher 3: Wild Hunt"},
+                    {"Red Dead Redemption 2"},
+                    {"Cyberpunk 2077"},
+                    {"Assassin's Creed Valhalla"},
+                    {"Grand Theft Auto V"},
+                    {"Sekiro: Shadows Die Twice"},
+                    {"The Last of Us Part II"},
+                    {"Doom Eternal"},
+                    {"Among Us"},
+                    {"Fall Guys: Ultimate Knockout"},
+                    {"Dota 2"},
+                    {"Apex Legends"},
+                    {"Counter-Strike 2"},
+                    {"Palworld"},
+                    {"Tekken 8"},
+                    {"Elden Ring"},
+                    {"Destiny 2"},
+                    {"Rust"},
+                    {"Monster Hunter: World"},
+                    {"Supermarket: toko berguna"}
+       
+       };
+
+
+      if(gameNumber >= 1 && gameNumber <= 20) {
+
+        tambahkanKeKeranjang(recommendedGames[gameNumber - 1], cart, &cartSize);
+
+} else {
+
+    tampil("nomor game tidak valid.");
+
+}
+
+
+   } else {
+
+    char keyword[100];
+    input << keyword;
+
+    structure Game newGame;
+    
+    tambahkanKeKeranjang(newGame, cart, &cartSize);
+
+}
+
+ input << text:"Mau beli lagi?" << choice;
+
+ 
+
+
+    } while (choice == 'y' || choice == 'Y')
+
+  } else {
+    
+      setiap ( awal int i = 0; jika i < cartSize; i += 1 setiap iterasi) {
+	
+	 display >> text:"Isi keranjang belanja anda: ";
+         tampil(cart[sebanyak i].property_game.property_title);
+
+      }
+
+   }
+
+   
+   int pilihan;
+   input << text:"Pilih metode pembayaran (1-4): " << pilihan;
+   
+   if(pilihan == 1 || pilihan == 2) {
+
+     int nomorKartuKredit, pin;
+
+     input << text:"Masukkan nomor kartu kredit: " << nomorKartuKredit;
+     input << text:"Masukkan PIN: " << pin;
+
+     display >> text:"Pembayaran berhasil";
+
+     tampilkanNota(cart, cartSize)
+
+   } else if(pilihan == 3 || pilihan == 4) {
+     
+     char email[100], password[100];
+     int nomorTelepon;
+
+     input << text:"Masukkan email: " << email;
+     input << text:"Masukkan password: " << password;
+     input << text:"Masukkan nomor telepon: " << nomorTelepon;
+     
+     display >> text:"Pembayaran berhasil";
+
+     tampilkanNota(cart, cartSize)
+   
+   } else {
+     display >> text:"Pilihan tidak valid.";
+     return 0;
+     }
+
+
+  } else {
+      display >> text:"Login gagal. Pastikan input password atau email anda sudah benar!";
+    }
+
+  return 0;
+
+}
