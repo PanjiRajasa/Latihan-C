@@ -66,11 +66,11 @@ void displayReceipt(struct CartItem cart[], int cartSize) {
     printf("| ----------------------------------- |\n");
     printf("|          Nota Pembelian Anda:       |\n");
     printf("| ----------------------------------- |\n");
-    
+
     printf("| ----------------------------------- |\n");
     printf("|             No   |  Game            |\n");
     printf("| ----------------------------------- |\n");
-    
+
     /*
     Dalam bahasa C, format specifier "%-5d" digunakan dalam fungsi printf() untuk mencetak nilai integer 
     dengan lebar field sebesar 5 karakter dan dengan penjajaran ke kiri (left-justified).
@@ -78,7 +78,7 @@ void displayReceipt(struct CartItem cart[], int cartSize) {
     Dalam bahasa C, format specifier "%-20s" digunakan dalam fungsi printf() untuk mencetak string dengan 
     lebar field sebesar 20 karakter dan dengan penjajaran ke kiri (left-justified).
     */
-    
+
     for (int i = 0; i < cartSize; i++) {
         printf("%-5d| %-20s\n", i + 1, cart[i].game.title);
     }
@@ -88,31 +88,40 @@ void displayReceipt(struct CartItem cart[], int cartSize) {
 
 int main() {
     // system("color 0b");
-    
+
+    printf("╔═══╗╔═══╗─────────╔═══╦╗\n");
+    printf("║╔═╗║║╔═╗║─────────║╔═╗║║\n");
+    printf("║║─╚╝║║─╚╬══╦╗╔╦══╗║╚══╣╚═╦══╦══╗\n");
+    printf("║║─╔╗║║╔═╣╔╗║╚╝║║═╣╚══╗║╔╗║╔╗║╔╗║\n");
+    printf("║╚═╝║║╚╩═║╔╗║║║║║═╣║╚═╝║║║║╚╝║╚╝║\n");
+    printf("╚═══╝╚═══╩╝╚╩╩╩╩══╝╚═══╩╝╚╩══╣╔═╝\n");
+    printf("─────────────────────────────║║\n");
+    printf("─────────────────────────────╚╝\n");
+
     //Start Penampil Judul
-    
+
     int i, j;
     int rows = 5;
     int cols = 13;
-    
-    
+
+
     char c_game_shop[5][13] = {
         {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'},
-        {'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
-        {'*', 'C', ' ', 'G', 'A', 'M', 'E', ' ', 'S', 'H', 'O', 'P', '*'},
-        {'*', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+        {'*', 'B', 'Y', ' ', 'P', 'A', 'N', 'J', 'I', ' ', ' ', ' ', '*'},
+        {'*', ' ', ' ', ' ', 'A', 'G', 'U', 'S', ' ', 'D', '.', ' ', '*'},
+        {'*', ' ', ' ', ' ', 'N', 'A', 'N', 'D', 'A', ' ', ' ', ' ', '*'},
         {'*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*'}
     };
-    
+
     //End Penampil Judul
-    
+
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
             printf("%c ", c_game_shop[i][j]);
         }
         printf("\n");
     }
-    
+
     struct User user;
     char fixPassword[] = "C Game Shop";
     struct CartItem cart[20];
@@ -146,7 +155,7 @@ int main() {
             if (choice == 'y' || choice == 'Y') {
                 printf("\nMasukkan nomor game rekomendasi yang ingin Anda beli: ");
                 int gameNumber;
-                
+
                 scanf("%d", &gameNumber);
                 getchar();
 
@@ -172,28 +181,28 @@ int main() {
                     {"Monster Hunter: World"},
                     {"Supermarket: toko berguna"}
                 };
-                
+
                 if (gameNumber >= 1 && gameNumber <= 20) {
-                    
+
                     addToCart(recommendedGames[gameNumber - 1], cart, &cartSize);
                     printf("Game telah ditambahkan ke keranjang.\n");
-                    
+
                 } else {
                     printf("Nomor game tidak valid.\n");
                 }
             } else {
                 printf("\nMasukkan nama game yang ingin dibeli: ");
-                
+
                 char keyword[100];
-                
+
                 fgets(keyword, sizeof(keyword), stdin);
                 keyword[strcspn(keyword, "\n")] = '\0';
 
                 struct Game newGame;
                 strcpy(newGame.title, keyword);
-                
+
                 addToCart(newGame, cart, &cartSize);
-                
+
                 printf("Game telah ditambahkan ke keranjang.\n");
             }
 
@@ -231,7 +240,7 @@ int main() {
                     printf("| Masukkan nomor kartu kredit: ");
                     scanf("%d", &nomorKartuKredit);
                     printf("| ---------------------------- |\n");
-                    
+
                     printf("\n| ----------- |\n");
                     printf("| Masukkan PIN: ");
                     scanf("%d", &pin);
@@ -251,7 +260,7 @@ int main() {
                     printf("| Masukkan nomor kartu kredit: ");
                     scanf("%d", &nomorKartuKredit);
                     printf("| ---------------------------- |\n");
-                    
+
                     printf("\n| ----------- |\n");
                     printf("Masukkan PIN: ");
                     scanf("%d", &pin);
@@ -260,7 +269,7 @@ int main() {
                     printf("\nPembayaran dengan MasterCard berhasil!\n");
 
                     displayReceipt(cart, cartSize); 
- 
+
                     break;
                 }
             case 3:
@@ -272,12 +281,12 @@ int main() {
                     printf("| Masukkan email: ");
                     scanf("%s", email);
                     printf("| ---------------- |\n");
-                    
+
                     printf("\n| ----------------- |\n");
                     printf("| Masukkan password: ");
                     scanf("%s", password);
                     printf("| ----------------- |\n");
-                    
+
                     printf("\n| ---------------------- |\n");
                     printf("| Masukkan nomor telepon: ");
                     scanf("%d", &nomorTelepon);
@@ -298,12 +307,12 @@ int main() {
                     printf("| Masukkan email: ");
                     scanf("%s", email);
                     printf("| ---------------- |\n");
-                    
+
                     printf("\n| ----------------- |\n");
                     printf("| Masukkan password: ");
                     scanf("%s", password);
                     printf("| ----------------- |\n");
-                    
+
                     printf("\n| ---------------------- |\n");
                     printf("| Masukkan nomor telepon: ");
                     scanf("%d", &nomorTelepon);
@@ -326,3 +335,5 @@ int main() {
 
     return 0;
 }
+ 
+ 
