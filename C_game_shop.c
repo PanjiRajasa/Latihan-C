@@ -3,6 +3,9 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <unistd.h>
+
+
 
 
 
@@ -23,6 +26,38 @@ struct Game {
 struct CartItem {
     struct Game game;
 };
+
+
+//fungsi membuat login displayer
+
+void loadingDisplay() {
+    
+    fflush(stdout);
+    
+    sleep(1);
+    
+    printf(".");
+    
+    fflush(stdout);
+    
+    sleep(1);
+    
+    printf(".");
+    
+    fflush(stdout);
+    
+    sleep(1);
+    
+    printf(".\n");
+    
+    fflush(stdout);
+    
+    sleep(1);
+    
+    
+    
+}
+
 
 
 
@@ -133,7 +168,12 @@ int main() {
     printf("\t\t\t\t\t\t─────────────────────────────╚╝\n\n");
     
     
+    /*Loading displayer start*/
     
+    
+    loadingDisplay();
+    
+    /*Loading displayer end*/
     
     
     
@@ -159,6 +199,15 @@ int main() {
     
     
     
+    /*Loading displayer start*/
+    
+    
+    loadingDisplay();
+    
+    /*Loading displayer end*/
+    
+    
+    
     printf("\t\t\t\t\t\t████████╗ ██████╗ ██╗  ██╗ ██████╗                         \n");
     printf("\t\t\t\t\t\t╚══██╔══╝██╔═══██╗██║ ██╔╝██╔═══██╗                        \n");
     printf("\t\t\t\t\t\t   ██║   ██║   ██║█████╔╝ ██║   ██║                        \n");
@@ -181,6 +230,16 @@ int main() {
     printf("\t\t\t\t\t\t╚═╝  ╚═╝╚═╝╚═╝   ╚═╝ ╚═════╝ ╚═╝ ╚═════╝  ╚═════╝  ╚═════╝ \n\n\n");
     
 
+
+
+    /*Loading displayer start*/
+    
+    printf("\n");
+    loadingDisplay();
+    printf("\n");
+    
+    /*Loading displayer end*/
+    
 
 
 
@@ -216,7 +275,12 @@ int main() {
     }
     
     
+    /*Loading displayer start*/
     
+    printf("\n");
+    loadingDisplay();
+    
+    /*Loading displayer end*/
     
 
     struct User user;
@@ -254,7 +318,13 @@ int main() {
     printf("| ---------------- \n\n\n");
     
     
+    /*Loading displayer start*/
     
+    printf("\n");
+    loadingDisplay();
+    printf("\n");
+    
+    /*Loading displayer end*/
     
     
     
@@ -282,6 +352,13 @@ int main() {
     printf("| ---------------- \n\n\n");
     
     
+    /*Loading displayer start*/
+    
+    printf("\n");
+    loadingDisplay();
+
+    
+    /*Loading displayer end*/
     
     
 
@@ -304,17 +381,22 @@ int main() {
 
 
 
-
-
-        displayRecommendedGames();
         
         
-        
-        
-        
+    
 
         char choice;
         do {
+            
+            
+            /*Loading displayer start*/
+    
+            printf("\n");
+            loadingDisplay();
+            printf("\n");
+            
+            
+            /*Loading displayer end*/
             
             printf("\n\n\n+---------------------------------------------------------------+\n");
             printf("|  ____                                                         |\n");
@@ -331,6 +413,17 @@ int main() {
             
             
             
+            /*Loading displayer start*/
+    
+            printf("\n");
+            loadingDisplay();
+            printf("\n");
+            
+            
+            /*Loading displayer end*/
+            
+            
+            displayRecommendedGames();
             
             printf("\nApakah Anda ingin membeli game rekomendasi? (y/n): ");
             scanf(" %c", &choice);
@@ -379,8 +472,13 @@ int main() {
 
                 if (gameNumber >= 1 && gameNumber <= 20) {
 
-
-
+                    
+                    printf("\n");
+                    
+                    loadingDisplay();
+                    
+                    printf("\n");
+                    
                     addToCart(recommendedGames[gameNumber - 1], cart, &cartSize);
                     printf("Game telah ditambahkan ke keranjang.\n");
                     
@@ -389,6 +487,7 @@ int main() {
 
                 } else {
                     
+                    printf("\n");
                     
                     printf("Nomor game tidak valid.\n");
                     
@@ -399,6 +498,14 @@ int main() {
                 
             } else {
                 
+                
+                /*Loading displayer start*/
+    
+                printf("\n");
+                loadingDisplay();
+                
+                
+                /*Loading displayer end*/
                 
                 printf("\n\n\n+---------------------------------------------------------------------------+\n");
                 printf("| __  __                 _    _                                             |\n");
@@ -441,7 +548,10 @@ int main() {
             }
 
 
-
+            printf("\n");
+            loadingDisplay();
+            printf("\n");
+            
             printf("Apakah Anda ingin membeli lagi? (y/n): ");
             scanf(" %c", &choice);
             getchar();
@@ -450,7 +560,14 @@ int main() {
             
         } while (choice == 'y' || choice == 'Y');
 
-
+        
+        /*Loading displayer start*/
+    
+        printf("\n");
+        loadingDisplay();
+        
+        
+        /*Loading displayer end*/
         
 
         printf("\n\n\n+-----------------------------------------------+\n");
@@ -479,7 +596,28 @@ int main() {
         }
         printf("|===============================\n\n\n");
 
-
+        
+        /*Loading displayer start*/
+    
+        printf("\n");
+        loadingDisplay();
+        
+        
+        /*Loading displayer end*/
+        
+        
+        printf("\n\n\n");
+        printf("  +------------------------------------------------------------------+\n");
+        printf("  | ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ ____ |\n");
+        printf("  |||P |||i |||l |||i |||h |||       |||M |||e |||t |||o |||d |||e |||\n");
+        printf("  |||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__|||__|||\n");
+        printf("  ||/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\||\n");
+        printf("  | ____ ____ ____ ____ ____ ____ ____ ____ ____ ____                |\n");
+        printf("  |||P |||e |||m |||b |||a |||y |||a |||r |||a |||n ||               |\n");
+        printf("  |||__|||__|||__|||__|||__|||__|||__|||__|||__|||__||               |\n");
+        printf("  ||/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|               |\n");
+        printf("  +------------------------------------------------------------------+\n\n\n");
+        
 
 
         int pilihan;
@@ -507,6 +645,14 @@ int main() {
                     
                     
                     printf("\n\n\n");
+                    
+                    /*Loading displayer start*/
+    
+                    loadingDisplay();
+                    printf("\n");
+                    
+                    /*Loading displayer end*/
+                    
                     printf("+--------------------------+\n");
                     printf("|__     _____ ____    _    |\n");
                     printf("|\\ \\   / /_ _/ ___|  / \\   |\n");
@@ -545,10 +691,18 @@ int main() {
                 
                 
             case 2:
-                {
+                {   
                     
                     
                     printf("\n\n\n");
+                    
+                    /*Loading displayer start*/
+    
+                    loadingDisplay();
+                    printf("\n");
+                    
+                    /*Loading displayer end*/
+                    
                     printf("+--------------------------------------------------+\n");
                     printf("| __  __           _                             _ |\n");
                     printf("||  \\/  | __ _ ___| |_ ___ _ __ ___ __ _ _ __ __| ||\n");
@@ -586,8 +740,19 @@ int main() {
                 }
             case 3:
                 {   
+        
+                    
                     
                     printf("\n\n\n");
+                    
+                    
+                    /*Loading displayer start*/
+    
+                    loadingDisplay();
+                    printf("\n");
+                    
+                    /*Loading displayer end*/
+                    
                     printf("+-------------------------+\n");
                     printf("| ____                    |\n");
                     printf("||  _ \\  __ _ _ __   __ _ |\n");
@@ -625,6 +790,14 @@ int main() {
                 {   
                     
                     printf("\n\n\n");
+                    
+                    /*Loading displayer start*/
+    
+                    loadingDisplay();
+                    printf("\n");
+                    
+                    /*Loading displayer end*/
+                    
                     printf("+--------------------------------------+\n");
                     printf("| _     _       _        _     _       |\n");
                     printf("|| |   (_)_ __ | | __   / \\   (_) __ _ |\n");
@@ -663,6 +836,13 @@ int main() {
             
             
                 printf("\n\n\n");
+                
+                /*Loading displayer start*/
+    
+                loadingDisplay();
+                printf("\n");
+                
+                /*Loading displayer end*/
         
                 printf("+--------------------------------------------------------+\n");
                 printf("| ____  _ _ _ _                   _   _     _       _    |\n");
@@ -687,7 +867,7 @@ int main() {
     else {
         
         
-        printf("\n\n\n");
+    
         
         printf("  +-------------------------------------------------------------+\n");
         printf("  | _                _                                 _      __|\n");
