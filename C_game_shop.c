@@ -34,25 +34,25 @@ void loadingDisplay() {
     
     fflush(stdout);
     
-    sleep(0.5);
+    sleep(1);
     
     printf(".");
     
     fflush(stdout);
     
-    sleep(0.5);
+    sleep(1);
     
     printf(".");
     
     fflush(stdout);
     
-    sleep(0.5);
+    sleep(1);
     
     printf(".\n");
     
     fflush(stdout);
     
-    sleep(0.5);
+    sleep(1);
     
     
     
