@@ -5,7 +5,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-
+double total_harga;
+double bayar;
 
 
 
@@ -67,30 +68,30 @@ void displayRecommendedGames() {
     
     
     
-    printf("| ---------------------------------- |\n");
-    printf("|          Game Rekomendasi:         |\n");
-    printf("| ---------------------------------- |\n");
-    printf("| 1. The Witcher 3: Wild Hunt        |\n");
-    printf("| 2. Red Dead Redemption 2           |\n");
-    printf("| 3. Cyberpunk 2077                  |\n");
-    printf("| 4. Assassin's Creed Valhalla       |\n");
-    printf("| 5. Grand Theft Auto V              |\n");
-    printf("| 6. Sekiro: Shadows Die Twice       |\n");
-    printf("| 7. The Last of Us Part II          |\n");
-    printf("| 8. Doom Eternal                    |\n");
-    printf("| 9. Among Us                        |\n");
-    printf("| 10. Fall Guys: Ultimate Knockout   |\n");
-    printf("| 11. Dota 2                         |\n");
-    printf("| 12. Apex Legends                   |\n");
-    printf("| 13. Counter-Strike 2               |\n");
-    printf("| 14. Palworld                       |\n");
-    printf("| 15. Tekken 8                       |\n");
-    printf("| 16. Elden Ring                     |\n");
-    printf("| 17. Destiny 2                      |\n");
-    printf("| 18. Rust                           |\n");
-    printf("| 19. Monster Hunter: World          |\n");
-    printf("| 20. Supermarket: toko berguna      |\n");
-    printf("| ---------------------------------- |\n");
+    printf("| ---------------------------------------- |\n");
+    printf("|          Game Rekomendasi:               |\n");
+    printf("| ---------------------------------------- |\n");
+    printf("| 1. The Witcher 3: Wild Hunt        $10000|\n");
+    printf("| 2. Red Dead Redemption 2           $10000|\n");
+    printf("| 3. Cyberpunk 2077                  $10000|\n");
+    printf("| 4. Assassin's Creed Valhalla       $10000|\n");
+    printf("| 5. Grand Theft Auto V              $10000|\n");
+    printf("| 6. Sekiro: Shadows Die Twice       $10000|\n");
+    printf("| 7. The Last of Us Part II          $10000|\n");
+    printf("| 8. Doom Eternal                    $10000|\n");
+    printf("| 9. Among Us                        $10000|\n");
+    printf("| 10. Fall Guys: Ultimate Knockout   $10000|\n");
+    printf("| 11. Dota 2                         $10000|\n");
+    printf("| 12. Apex Legends                   $10000|\n");
+    printf("| 13. Counter-Strike 2               $10000|\n");
+    printf("| 14. Palworld                       $10000|\n");
+    printf("| 15. Tekken 8                       $10000|\n");
+    printf("| 16. Elden Ring                     $10000|\n");
+    printf("| 17. Destiny 2                      $10000|\n");
+    printf("| 18. Rust                           $10000|\n");
+    printf("| 19. Monster Hunter: World          $10000|\n");
+    printf("| 20. Supermarket: toko berguna      $10000|\n");
+    printf("| ---------------------------------------- |\n");
     
     
     
@@ -140,8 +141,14 @@ void displayReceipt(struct CartItem cart[], int cartSize) {
     printf("|             No   |  Game            \n");
     printf("| ----------------------------------- \n");
     for (int i = 0; i < cartSize; i++) {
-    printf("              %d    |  %s               \n", i + 1, cart[i].game.title);        
+    printf("|              %d    |  %s   $10000\n", i + 1, cart[i].game.title); 
+    
         }
+    
+    printf("\n|Total harga: $%.2f ", total_harga);
+    printf("\n|Saldo anda: $%.2f ", bayar);
+    bayar -= total_harga;
+    printf("\n|Sisa saldo: $%.2f \n", bayar);
     printf("| ----------------------------------- \n");
 
 
@@ -155,6 +162,8 @@ void displayReceipt(struct CartItem cart[], int cartSize) {
 
 int main() {
     // system("color 0b");
+    bayar = 0.00;
+    total_harga = 0.00;
 
 
 
@@ -451,7 +460,7 @@ int main() {
                     
                     addToCart(recommendedGames[gameNumber - 1], cart, &cartSize);
                     printf("Game telah ditambahkan ke keranjang.\n");
-                    
+                    total_harga += 10000;
                     
                     
 
@@ -512,7 +521,7 @@ int main() {
 
 
                 printf("Game telah ditambahkan ke keranjang.\n");
-                
+                total_harga += 10000;
                 
                 
             }
@@ -562,9 +571,12 @@ int main() {
         printf("|===============================\n");
         printf("|  Isi Keranjang Belanja Anda:  \n");
         for (int i = 0; i < cartSize; i++) {
-        printf("|   %d. %s                      \n", i + 1, cart[i].game.title);
+        printf("|   %d. %s  $10000\n", i + 1, cart[i].game.title);
+        
         }
-        printf("|===============================\n\n\n");
+        
+        printf("|Total harga: $%.2f ", total_harga);
+        printf("\n|===============================\n\n\n");
 
         
         /*Loading displayer start*/
@@ -632,6 +644,7 @@ int main() {
                     
                     
                     int nomorKartuKredit, pin;
+                    //double bayar;
         
                     
                     
@@ -646,6 +659,19 @@ int main() {
                     printf("| Masukkan PIN: ");
                     scanf("%d", &pin);
                     printf("| -----------  \n");
+                    
+                    m_saldo_visa:
+                        printf("\n| -----------  \n");
+                        printf("| Total harga game yang dibeli: $%.2f  \n", total_harga);
+                        printf("| Masukkan saldo: $");
+                        scanf("%lf", &bayar);
+                        printf("| -----------  \n");
+                    
+                    if(bayar < total_harga) {
+                        printf("|Saldo anda tidak cukup.\n");
+                        printf("|Total harga: $%.2f ", total_harga);
+                        goto m_saldo_visa;
+                    }
 
 
 
@@ -697,9 +723,22 @@ int main() {
 
 
                     printf("\n| -----------  \n");
-                    printf("Masukkan PIN: ");
+                    printf("|Masukkan PIN: ");
                     scanf("%d", &pin);
                     printf("| -----------  \n");
+                    
+                    m_saldo_mastercard:
+                        printf("\n| -----------  \n");
+                        printf("| Total harga game yang dibeli: $%.2f  \n", total_harga);
+                        printf("| Masukkan saldo: $");
+                        scanf("%lf", &bayar);
+                        printf("| -----------  \n");
+                    
+                    if(bayar < total_harga) {
+                        printf("|Saldo anda tidak cukup.\n");
+                        printf("|Total harga: $%.2f ", total_harga);
+                        goto m_saldo_mastercard;
+                    }
 
                     printf("\nPembayaran dengan MasterCard berhasil!\n");
 
@@ -748,6 +787,19 @@ int main() {
                     printf("| Masukkan nomor telepon: ");
                     scanf("%d", &nomorTelepon);
                     printf("| ----------------------  \n");
+                    
+                    m_saldo_dana:
+                        printf("\n| -----------  \n");
+                        printf("| Total harga game yang dibeli: $%.2f  \n", total_harga);
+                        printf("| Masukkan saldo: $");
+                        scanf("%lf", &bayar);
+                        printf("| -----------  \n");
+                    
+                    if(bayar < total_harga) {
+                        printf("|Saldo anda tidak cukup.\n");
+                        printf("|Total harga: $%.2f ", total_harga);
+                        goto m_saldo_dana;
+                    }
 
                     printf("\nPembayaran dengan Dana berhasil!\n");
 
@@ -794,6 +846,19 @@ int main() {
                     printf("| Masukkan nomor telepon: ");
                     scanf("%d", &nomorTelepon);
                     printf("| ---------------------- \n");
+                    
+                    m_saldo_linkaja:
+                        printf("\n| -----------  \n");
+                        printf("| Total harga game yang dibeli: $%.2f  \n", total_harga);
+                        printf("| Masukkan saldo: $");
+                        scanf("%lf", &bayar);
+                        printf("| -----------  \n");
+                    
+                    if(bayar < total_harga) {
+                        printf("|Saldo anda tidak cukup.\n");
+                        printf("|Total harga: $%.2f ", total_harga);
+                        goto m_saldo_linkaja;
+                    }
 
                     printf("\nPembayaran dengan Linkaja berhasil!\n");
 
@@ -855,3 +920,6 @@ int main() {
 }
 
  
+
+
+
