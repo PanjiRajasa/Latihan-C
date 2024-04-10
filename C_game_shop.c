@@ -4,9 +4,12 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <time.h>
 
 double total_harga;
 double bayar;
+char inputVoucher[50];
+
 
 
 
@@ -358,8 +361,6 @@ int main() {
     printf("+----------------------------------------------------------------+\n\n\n");
 
 
-
-
         
         
     
@@ -586,10 +587,31 @@ int main() {
         
         
         /*Loading displayer end*/
+    
+    //masukkin voucher
+    printf("| ----------------------------  \n");
+    printf("| Silahkan masukkan voucher yang anda punya (masukkan \"skip\" jika anda tidak punya voucher): ");
+    scanf("%s", inputVoucher);
+    getchar(); // untuk membersihkan buffer stdin
+
+    printf("| ----------------------------  \n");
+
+    if(strcmp(inputVoucher, "fishingClub2024") == 0) {
+        
+        printf("\nPemasukkan voucher berhasil, sekarang total harga game yang anda beli akan mendapatkan pengurangan harga sebesar $5.000,00 :)\n");
+        
+    } else if (strcmp(inputVoucher, "skip") == 0) {
+        
+        printf("\nOk, tidak masalah :) \n");
+
+    } else {
+        
+        printf("\nMohon maaf, voucher anda tidak valid.\n");
+    }
         
         
         printf("\n\n\n");
-            printf(" ____ ___ _     ___ _   _   __  __ _____ _____ ___  ____  _____ \n");
+    printf(" ____ ___ _     ___ _   _   __  __ _____ _____ ___  ____  _____ \n");
     printf("|  _ \\_ _| |   |_ _| | | | |  \\/  | ____|_   _/ _ \\|  _ \\| ____|\n");
     printf("| |_) | || |    | || |_| | | |\\/| |  _|   | || | | | | | |  _|  \n");
     printf("|  __/| || |___ | ||  _  | | |  | | |___  | || |_| | |_| | |___ \n");
@@ -623,7 +645,12 @@ int main() {
            
             case 1:
                 {
-                    
+                    //cek apakah berhak kena potong harga atau engga
+                    if(strcmp(inputVoucher, "fishingClub2024") == 0) {
+        
+                        total_harga -= 5000.00;
+                        
+                    }
                     
                     printf("\n\n\n");
                     
@@ -688,6 +715,13 @@ int main() {
             case 2:
                 {   
                     
+                    //cek apakah berhak kena potong harga atau engga
+                    if(strcmp(inputVoucher, "fishingClub2024") == 0) {
+        
+                        total_harga -= 5000.00;
+                        
+                    }
+                    
                     
                     printf("\n\n\n");
                     
@@ -748,7 +782,13 @@ int main() {
                 }
             case 3:
                 {   
+                    
+                    //cek apakah berhak kena potong harga atau engga
+                    if(strcmp(inputVoucher, "fishingClub2024") == 0) {
         
+                        total_harga -= 5000.00;
+                        
+                    }
                     
                     
                     printf("\n\n\n");
@@ -809,6 +849,13 @@ int main() {
                 }
             case 4:
                 {   
+                    
+                    //cek apakah berhak kena potong harga atau engga
+                    if(strcmp(inputVoucher, "fishingClub2024") == 0) {
+        
+                        total_harga -= 5000.00;
+                        
+                    }
                     
                     printf("\n\n\n");
                     
@@ -920,6 +967,8 @@ int main() {
 }
 
  
+
+
 
 
 
