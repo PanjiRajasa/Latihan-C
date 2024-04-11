@@ -9,6 +9,9 @@
 double total_harga;
 double bayar;
 char inputVoucher[50];
+char newEmail[100];
+char newPassword[50];
+
 
 
 
@@ -40,7 +43,7 @@ void loadingDisplay() {
     
     sleep(1);
     
-    printf(".");
+    printf("\n.");
     
     fflush(stdout);
     
@@ -62,8 +65,16 @@ void loadingDisplay() {
     
 }
 
+/*Easter egg = fungsi yang menampilkan teks*/
 
-
+int pilihSignUp_Login() {
+    printf("\n| ------------ \n");
+    printf("| Mau daftar akun / login? (d untuk daftar akun / l untuk login): ");
+    
+    //kode seterusnya
+    
+    return 0 + 1;
+}
 
 
 // Fungsi untuk game rekomendasi
@@ -260,8 +271,60 @@ int main() {
         printf("\n");
     }
     
+    /*
+    SEBELUM LOGIN/SIGNUP
+    */
+    
+    pilihSignUp_Login(); // fungsi menampilkan teks mau login atau tidak
+    
+    
+    char mau_login_signup[10];
+    
+    fgets(mau_login_signup, sizeof(mau_login_signup), stdin);
+    mau_login_signup[strcspn(mau_login_signup, "\n")] = '\0';
+    printf("| ------------ ");
+    
+    if (strcmp(mau_login_signup, "d") == '\0' ) {
+        
+        printf("\n| ------------ \n");
+        printf("| Harap masukkan email dan password anda untuk mendaftar \n");
+        printf("| ------------ \n");
+        printf("| Masukkan email: ");
+        fgets(newEmail, sizeof(newEmail), stdin);
+        newEmail[strcspn(newEmail, "\n")] = '\0';
+        printf("| ------------ \n");
+        
+        printf("| ------------ \n");
+        printf("| Masukkan password: ");
+        fgets(newPassword, sizeof(newPassword), stdin);
+        newPassword[strcspn(newPassword, "\n")] = '\0';
+        printf("| ------------ \n");
+        
+        loadingDisplay();
+        
+        printf("\n\n+-------------------------------------------------+\n");
+        printf("| __  __                _        __ _             |\n");
+        printf("||  \\/  | ___ _ __   __| | __ _ / _| |_ __ _ _ __ |\n");
+        printf("|| |\\/| |/ _ \\ '_ \\ / _` |/ _` | |_| __/ _` | '__||\n");
+        printf("|| |  | |  __/ | | | (_| | (_| |  _| || (_| | |   |\n");
+        printf("||_|__|_|\\___|_| |_|\\__,_|\\__,_|_|_ \\__\\__,_|_|   |\n");
+        printf("|| __ )  ___ _ __| |__   __ _ ___(_) |            |\n");
+        printf("||  _ \\ / _ \\ '__| '_ \\ / _` / __| | |            |\n");
+        printf("|| |_) |  __/ |  | | | | (_| \\__ \\ | |            |\n");
+        printf("||____/ \\___|_|  |_| |_|\\__,_|___/_|_|            |\n");
+        printf("+-------------------------------------------------+\n");
+
+        
+        goto start_program_after_signup;
+        
+    } else if (strcmp(mau_login_signup, "l") == '\0' ) {
+        
+        goto start_program_after_login;
+    }
+    
     
     /*Loading displayer start*/
+    start_program_after_login:
     
     printf("\n");
     loadingDisplay();
@@ -364,7 +427,8 @@ int main() {
         
         
     
-
+        start_program_after_signup:
+        printf("\n");
         char choice;
         do {
             
@@ -910,6 +974,7 @@ int main() {
                     printf("\nPembayaran dengan Linkaja berhasil!\n");
 
                     displayReceipt(cart, cartSize); 
+                    
 
                     break;
                 }
@@ -967,6 +1032,7 @@ int main() {
 }
 
  
+
 
 
 
