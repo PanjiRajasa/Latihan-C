@@ -307,7 +307,10 @@ int main() {
         printf("|  __/  __/ | | | (_| | (_| |  _| || (_| | | | (_| | | | |\n");
         printf("|_|   \\___|_| |_|\\__,_|\\__,_|_|  \\__\\__,_|_|  \\__,_|_| |_|\n");
 
-
+        //label
+        awal_masukkan_email_baru:
+        
+        
         printf("\n| ------------ \n");
         printf("| Harap masukkan email dan password anda untuk mendaftar \n");
         printf("| ------------ \n");
@@ -316,11 +319,42 @@ int main() {
         newEmail[strcspn(newEmail, "\n")] = '\0';
         printf("| ------------ \n");
         
-        printf("| ------------ \n");
-        printf("| Masukkan password: ");
+        //verifikasi email
+        if (strstr(newEmail, "@gmail.com") || strstr(newEmail, "@yahoo.com") || strstr(newEmail, "@outlook.com")) {
+            goto lanjut_ke_password_baru;
+        } else {
+            printf("\n\nEmail tidak valid. Mohon masukkan email dengan format @gmail.com, @yahoo.com, atau @outlook.com.\n");
+            goto awal_masukkan_email_baru;
+        }
+        
+        //label
+        lanjut_ke_password_baru:
+        
+        printf("\n| ------------ \n");
+        printf("| Masukkan password (Tidak boleh kosong dan melebihi 12 karakter serta minimal 8 karakter): ");
         fgets(newPassword, sizeof(newPassword), stdin);
         newPassword[strcspn(newPassword, "\n")] = '\0';
         printf("| ------------ \n");
+        
+        //verifikasi password
+        if (strcmp(newPassword, "") == 0) {
+            printf("\n\nPassword tidak boleh kosong!\n");
+            
+            goto lanjut_ke_password_baru;
+        }
+        
+        if (strlen(newPassword) < 8) {
+            printf("\n\nPassword harus memiliki minimal 8 karakter!\n");
+            
+            goto lanjut_ke_password_baru;
+        }
+
+        // Periksa apakah password melebihi 12 karakter
+        if (strlen(newPassword) > 12) {
+            printf("\n\nPassword melebihi 12 karakter!\n");
+            
+            goto lanjut_ke_password_baru;
+        }
         
         loadingDisplay();
         
@@ -386,7 +420,15 @@ int main() {
     user.email[strcspn(user.email, "\n")] = '\0';
     printf("| ---------------- \n\n\n");
     
+    //verifikasi email
+    if (strcmp(user.email, "cgs@gmail.com") == 0) {
+        goto lanjut_ke_password;
+    } else {
+        goto gagal_login;
+    }
     
+    
+    lanjut_ke_password:
     /*Loading displayer start*/
     
     printf("\n");
@@ -1155,7 +1197,7 @@ int main() {
     else {
         
         
-    
+        gagal_login:
         
         printf("  +-------------------------------------------------------------+\n");
         printf("  | _                _                                 _      __|\n");
@@ -1174,6 +1216,7 @@ int main() {
 }
 
  
+
 
 
 
