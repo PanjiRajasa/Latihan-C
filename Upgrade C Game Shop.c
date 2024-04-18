@@ -4,6 +4,13 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <time.h>
+
+double total_harga;
+double bayar;
+char inputVoucher[50];
+char newEmail[100];
+char newPassword[50];
 
 
 
@@ -34,85 +41,71 @@ void loadingDisplay() {
     
     fflush(stdout);
     
-    sleep(0.8);
+    sleep(1);
+    
+    printf("\n.");
+    
+    fflush(stdout);
+    
+    sleep(1);
     
     printf(".");
     
     fflush(stdout);
     
-    sleep(2);
-    
-    printf(".");
-    
-    fflush(stdout);
-    
-    sleep(2);
+    sleep(1);
     
     printf(".\n");
     
     fflush(stdout);
     
-    sleep(0.8);
+    sleep(1);
     
     
     
 }
 
+/*Easter egg = fungsi yang menampilkan teks*/
 
-
+int pilihSignUp_Login() {
+    printf("\n| ------------ \n");
+    printf("| Mau daftar akun / login? (d untuk daftar akun / l untuk login): ");
+    
+    //kode seterusnya
+    
+    return 0 + 1;
+}
 
 
 // Fungsi untuk game rekomendasi
 void displayRecommendedGames() {
     
-   printf("_______              ______    __                         \n");
-   printf("/       \\            /      \\  /  |                        \n");
-   printf("$$$$$$$  |  ______  /$$$$$$  |_$$ |_     ______    ______  \n");
-   printf("$$ |  $$ | /      \\ $$ |_ $$// $$   |   /      \\  /      \\ \n");
-   printf("$$ |  $$ | $$$$$$  |$$   |   $$$$$$/    $$$$$$  |/$$$$$$  |\n");
-   printf("$$ |  $$ | /    $$ |$$$$/      $$ | __  /    $$ |$$ |  $$/ \n");
-   printf("$$ |__$$ |/$$$$$$$ |$$ |       $$ |/  |/$$$$$$$ |$$ |      \n");
-   printf("$$    $$/ $$    $$ |$$ |       $$  $$/ $$    $$ |$$ |      \n");
-   printf("$$$$$$$/   $$$$$$$/ $$/         $$$$/   $$$$$$$/ $$/       \n");
-   printf("                                                         \n");
-   printf("                                                         \n");
-   printf("                                                         \n");
-   printf("  ______                                            ____   \n");
-   printf(" /      \\                                          /    \\  \n");
-   printf("/$$$$$$  |  ______   _____  ____    ______        /$$$$  | \n");
-   printf("$$ | _$$/  /      \\ /     \\/    \\  /      \\       $$  $$ | \n");
-   printf("$$ |/    | $$$$$$  |$$$$$$ $$$$  |/$$$$$$  |         /$$/  \n");
-   printf("$$ |$$$$ | /    $$ |$$ | $$ | $$ |$$    $$ |        /$$/   \n");
-   printf("$$ \\__$$ |/$$$$$$$ |$$ | $$ | $$ |$$$$$$$$/         $$/    \n");
-   printf("$$    $$/ $$    $$ |$$ | $$ | $$ |$$       |        /  |   \n");
-   printf(" $$$$$$/   $$$$$$$/ $$/  $$/  $$/  $$$$$$$/         $$/    \n");
     
     
-    
-    printf("| ---------------------------------- |\n");
-    printf("|          Daftar  Game:             |\n");
-    printf("| ---------------------------------- |\n");
-    printf("| 1. The Witcher 3: Wild Hunt        |\n");
-    printf("| 2. Red Dead Redemption 2           |\n");
-    printf("| 3. Cyberpunk 2077                  |\n");
-    printf("| 4. Assassin's Creed Valhalla       |\n");
-    printf("| 5. Grand Theft Auto V              |\n");
-    printf("| 6. Sekiro: Shadows Die Twice       |\n");
-    printf("| 7. The Last of Us Part II          |\n");
-    printf("| 8. Doom Eternal                    |\n");
-    printf("| 9. Among Us                        |\n");
-    printf("| 10. Fall Guys: Ultimate Knockout   |\n");
-    printf("| 11. Dota 2                         |\n");
-    printf("| 12. Apex Legends                   |\n");
-    printf("| 13. Counter-Strike 2               |\n");
-    printf("| 14. Palworld                       |\n");
-    printf("| 15. Tekken 8                       |\n");
-    printf("| 16. Elden Ring                     |\n");
-    printf("| 17. Destiny 2                      |\n");
-    printf("| 18. Rust                           |\n");
-    printf("| 19. Monster Hunter: World          |\n");
-    printf("| 20. Supermarket: toko berguna      |\n");
-    printf("| ---------------------------------- |\n");
+    printf("| ---------------------------------------- |\n");
+    printf("|          Game Rekomendasi:               |\n");
+    printf("| ---------------------------------------- |\n");
+    printf("| 1. The Witcher 3: Wild Hunt        $10000|\n");
+    printf("| 2. Red Dead Redemption 2           $10000|\n");
+    printf("| 3. Cyberpunk 2077                  $10000|\n");
+    printf("| 4. Assassin's Creed Valhalla       $10000|\n");
+    printf("| 5. Grand Theft Auto V              $10000|\n");
+    printf("| 6. Sekiro: Shadows Die Twice       $10000|\n");
+    printf("| 7. The Last of Us Part II          $10000|\n");
+    printf("| 8. Doom Eternal                    $10000|\n");
+    printf("| 9. Among Us                        $10000|\n");
+    printf("| 10. Fall Guys: Ultimate Knockout   $10000|\n");
+    printf("| 11. Dota 2                         $10000|\n");
+    printf("| 12. Apex Legends                   $10000|\n");
+    printf("| 13. Counter-Strike 2               $10000|\n");
+    printf("| 14. Palworld                       $10000|\n");
+    printf("| 15. Tekken 8                       $10000|\n");
+    printf("| 16. Elden Ring                     $10000|\n");
+    printf("| 17. Destiny 2                      $10000|\n");
+    printf("| 18. Rust                           $10000|\n");
+    printf("| 19. Monster Hunter: World          $10000|\n");
+    printf("| 20. Supermarket: toko berguna      $10000|\n");
+    printf("| ---------------------------------------- |\n");
     
     
     
@@ -162,8 +155,14 @@ void displayReceipt(struct CartItem cart[], int cartSize) {
     printf("|             No   |  Game            \n");
     printf("| ----------------------------------- \n");
     for (int i = 0; i < cartSize; i++) {
-    printf("              %d    |  %s               \n", i + 1, cart[i].game.title);        
+    printf("|              %d    |  %s   $10000\n", i + 1, cart[i].game.title); 
+    
         }
+    
+    printf("\n|Total harga: $%.2f ", total_harga);
+    printf("\n|Saldo anda: $%.2f ", bayar);
+    bayar -= total_harga;
+    printf("\n|Sisa saldo: $%.2f \n", bayar);
     printf("| ----------------------------------- \n");
 
 
@@ -177,17 +176,36 @@ void displayReceipt(struct CartItem cart[], int cartSize) {
 
 int main() {
     // system("color 0b");
+    bayar = 0.00;
+    total_harga = 0.00;
 
 
 
-    printf("\t\t\t\t\t\t╔═══╗╔═══╗─────────╔═══╦╗\n");
-    printf("\t\t\t\t\t\t║╔═╗║║╔═╗║─────────║╔═╗║║\n");
-    printf("\t\t\t\t\t\t║║─╚╝║║─╚╬══╦╗╔╦══╗║╚══╣╚═╦══╦══╗\n");
-    printf("\t\t\t\t\t\t║║─╔╗║║╔═╣╔╗║╚╝║║═╣╚══╗║╔╗║╔╗║╔╗║\n");
-    printf("\t\t\t\t\t\t║╚═╝║║╚╩═║╔╗║║║║║═╣║╚═╝║║║║╚╝║╚╝║\n");
-    printf("\t\t\t\t\t\t╚═══╝╚═══╩╝╚╩╩╩╩══╝╚═══╩╝╚╩══╣╔═╝\n");
-    printf("\t\t\t\t\t\t─────────────────────────────║║\n");
-    printf("\t\t\t\t\t\t─────────────────────────────╚╝\n\n");
+    printf("   _      _      _      _      _      _      _      _      _      _      _      _   \n");
+    printf(" _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_\n");
+    printf("(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)\n");
+    printf(" (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_) \n");
+    printf("   _                                                                            _   \n");
+    printf(" _( )_                                                                        _( )_\n");
+    printf("(_ o _)                                                                      (_ o _)\n");
+    printf(" (_,_)       ____    ____    _    __  __ _____   ____  _   _  ___  ____       (_,_) \n");
+    printf("   _        / ___|  / ___|  / \\  |  \\/  | ____| / ___|| | | |/ _ \\|  _ \\        _   \n");
+    printf(" _( )_     | |     | |  _  / _ \\ | |\\/| |  _|   \\___ \\| |_| | | | | |_) |     _( )_\n");
+    printf("(_ o _)    | |___  | |_| |/ ___ \\| |  | | |___   ___) |  _  | |_| |  __/     (_ o _)\n");
+    printf(" (_,_)      \\____|  \\____/_/   \\_\\_|  |_|_____| |____/|_| |_|\\___/|_|         (_,_) \n");
+    printf("   _                                                                            _   \n");
+    printf(" _( )_                                                                        _( )_\n");
+    printf("(_ o _)                                                                      (_ o _)\n");
+    printf(" (_,_)                                                                        (_,_) \n");
+    printf("   _      _      _      _      _      _      _      _      _      _      _      _   \n");
+    printf(" _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_\n");
+    printf("(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)(_ o _)\n");
+    printf(" (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_)  (_,_) \n");
+    
+    
+  
+    
+  
     
     
     /*Loading displayer start*/
@@ -199,57 +217,14 @@ int main() {
     
     
     
-    printf("\t\t\t\t\t\t██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗        \n");
-    printf("\t\t\t\t\t\t██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝        \n");
-    printf("\t\t\t\t\t\t██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗          \n");
-    printf("\t\t\t\t\t\t██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝          \n");
-    printf("\t\t\t\t\t\t╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗        \n");
-    printf("\t\t\t\t\t\t ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝        \n");
-    printf("\t\t\t\t\t\t████████╗ ██████╗      ██████╗     ██████╗  █████╗ ███╗   ███╗███████╗\n");
-    printf("\t\t\t\t\t\t╚══██╔══╝██╔═══██╗    ██╔════╝    ██╔════╝ ██╔══██╗████╗ ████║██╔════╝\n");
-    printf("\t\t\t\t\t\t   ██║   ██║   ██║    ██║         ██║  ███╗███████║██╔████╔██║█████╗  \n");
-    printf("\t\t\t\t\t\t   ██║   ██║   ██║    ██║         ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  \n");
-    printf("\t\t\t\t\t\t   ██║   ╚██████╔╝    ╚██████╗    ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗\n");
-    printf("\t\t\t\t\t\t   ╚═╝    ╚═════╝      ╚═════╝     ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝\n");
-    printf("\t\t\t\t\t\t███████╗██╗  ██╗ ██████╗ ██████╗      ███╗  ███╗                      \n");
-    printf("\t\t\t\t\t\t██╔════╝██║  ██║██╔═══██╗██╔══██╗    ██╔██╗██╔██╗                     \n");
-    printf("\t\t\t\t\t\t███████╗███████║██║   ██║██████╔╝    ╚═╝╚═╝╚═╝╚═╝                     \n");
-    printf("\t\t\t\t\t\t╚════██║██╔══██║██║   ██║██╔═══╝                                      \n");
-    printf("\t\t\t\t\t\t███████║██║  ██║╚██████╔╝██║         ███████╗███████╗                 \n");
-    printf("\t\t\t\t\t\t╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝         ╚══════╝╚══════╝                 \n\n\n");
+ printf(" _____ ___  _  _____    ____  _____ ____  ____    _       _    _  ___   ___   ___   ___  \n");
+    printf("|_   _/ _ \\| |/ / _ \\  / ___|| ____|  _ \\| __ )  / \\     | |  / |/ _ \\ / _ \\ / _ \\ / _ \\ \n");
+    printf("  | || | | | ' / | | | \\___ \\|  _| | |_) |  _ \\ / _ \\   / __) | | | | | | | | | | | | | |\n");
+    printf("  | || |_| | . \\ |_| |  ___) | |___|  _ <| |_) / ___ \\  \\__ \\ | | |_| | |_| | |_| | |_| |\n");
+    printf("  |_| \\___/|_|\\_\\___/  |____/|_____|_| \\_\\____/_/   \\_\\ (   / |_|\\___(_)___/ \\___/ \\___/ \n");
+    printf("                                                         |_|                             \n");
+
     
-    
-    
-    
-    /*Loading displayer start*/
-    
-    
-    loadingDisplay();
-    
-    /*Loading displayer end*/
-    
-    
-    
-    printf("\t\t\t\t\t\t████████╗ ██████╗ ██╗  ██╗ ██████╗                         \n");
-    printf("\t\t\t\t\t\t╚══██╔══╝██╔═══██╗██║ ██╔╝██╔═══██╗                        \n");
-    printf("\t\t\t\t\t\t   ██║   ██║   ██║█████╔╝ ██║   ██║                        \n");
-    printf("\t\t\t\t\t\t   ██║   ██║   ██║██╔═██╗ ██║   ██║                        \n");
-    printf("\t\t\t\t\t\t   ██║   ╚██████╔╝██║  ██╗╚██████╔╝                        \n");
-    printf("\t\t\t\t\t\t   ╚═╝    ╚═════╝ ╚═╝  ╚═╝ ╚═════╝                         \n");
-    printf("                                                           \n");
-    printf("\t\t\t\t\t\t███████╗███████╗██████╗ ██████╗  █████╗                    \n");
-    printf("\t\t\t\t\t\t██╔════╝██╔════╝██╔══██╗██╔══██╗██╔══██╗                   \n");
-    printf("\t\t\t\t\t\t███████╗█████╗  ██████╔╝██████╔╝███████║                   \n");
-    printf("\t\t\t\t\t\t╚════██║██╔══╝  ██╔══██╗██╔══██╗██╔══██║                   \n");
-    printf("\t\t\t\t\t\t███████║███████╗██║  ██║██████╔╝██║  ██║                   \n");
-    printf("\t\t\t\t\t\t╚══════╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝                   \n");
-    printf("                                                           \n");
-    printf("\t\t\t\t\t\t██████╗ ██████╗  ██╗ ██████╗     ██████╗  ██████╗  ██████╗ \n");
-    printf("\t\t\t\t\t\t██╔══██╗██╔══██╗███║██╔═████╗   ██╔═████╗██╔═████╗██╔═████╗\n");
-    printf("\t\t\t\t\t\t██████╔╝██████╔╝╚██║██║██╔██║   ██║██╔██║██║██╔██║██║██╔██║\n");
-    printf("\t\t\t\t\t\t██╔══██╗██╔═══╝  ██║████╔╝██║   ████╔╝██║████╔╝██║████╔╝██║\n");
-    printf("\t\t\t\t\t\t██║  ██║██║██╗   ██║╚██████╔╝██╗╚██████╔╝╚██████╔╝╚██████╔╝\n");
-    printf("\t\t\t\t\t\t╚═╝  ╚═╝╚═╝╚═╝   ╚═╝ ╚═════╝ ╚═╝ ╚═════╝  ╚═════╝  ╚═════╝ \n\n\n");
     
 
 
@@ -296,8 +271,116 @@ int main() {
         printf("\n");
     }
     
+    /*
+    SEBELUM LOGIN/SIGNUP
+    */
+
+   loadingDisplay();
+
+    printf("\n _                _            __  ____         __ _               ___ \n");
+    printf("| |    ___   __ _(_)_ __      / / |  _ \\  __ _ / _| |_ __ _ _ __  |__ \\\n");
+    printf("| |   / _ \\ / _` | | '_ \\    / /  | | | |/ _` | |_| __/ _` | '__|   / /\n");
+    printf("| |__| (_) | (_| | | | | |  / /   | |_| | (_| |  _| || (_| | |     |_|\n");
+    printf("|_____\\___/ \\__, |_|_| |_| /_/    |____/ \\__,_|_|  \\__\\__,_|_|     (_)\n");
+    printf("            |___/                                                      \n\n");
+    
+    pilihSignUp_Login(); // fungsi menampilkan teks mau login atau tidak
+    
+    
+    char mau_login_signup[10];
+    
+    fgets(mau_login_signup, sizeof(mau_login_signup), stdin);
+    mau_login_signup[strcspn(mau_login_signup, "\n")] = '\0';
+    printf("| ------------ ");
+    
+    if (strcmp(mau_login_signup, "d") == '\0' ) {
+        
+        loadingDisplay();
+
+        printf("\n\n _____                                                    \n");
+        printf("|  ___|__  _ __ _ __ ___                                  \n");
+        printf("| |_ / _ \\| '__| '_ ` _ \\                                 \n");
+        printf("|  _| (_) | |  | | | | | |                                \n");
+        printf("|_|  \\___/|_|  |_| |_| |_|    __ _                         \n");
+        printf("|  _ \\ ___ _ __   __| | __ _ / _| |_ __ _ _ __ __ _ _ __   \n");
+        printf("| |_) / _ \\ '_ \\ / _` |/ _` | |_| __/ _` | '__/ _` | '_ \\ \n");
+        printf("|  __/  __/ | | | (_| | (_| |  _| || (_| | | | (_| | | | |\n");
+        printf("|_|   \\___|_| |_|\\__,_|\\__,_|_|  \\__\\__,_|_|  \\__,_|_| |_|\n");
+
+        //label
+        awal_masukkan_email_baru:
+        
+        
+        printf("\n| ------------ \n");
+        printf("| Harap masukkan email dan password anda untuk mendaftar \n");
+        printf("| ------------ \n");
+        printf("| Masukkan email: ");
+        fgets(newEmail, sizeof(newEmail), stdin);
+        newEmail[strcspn(newEmail, "\n")] = '\0';
+        printf("| ------------ \n");
+        
+        //verifikasi email
+        if (strstr(newEmail, "@gmail.com") || strstr(newEmail, "@yahoo.com") || strstr(newEmail, "@outlook.com")) {
+            goto lanjut_ke_password_baru;
+        } else {
+            printf("\n\nEmail tidak valid. Mohon masukkan email dengan format @gmail.com, @yahoo.com, atau @outlook.com.\n");
+            goto awal_masukkan_email_baru;
+        }
+        
+        //label
+        lanjut_ke_password_baru:
+        
+        printf("\n| ------------ \n");
+        printf("| Masukkan password (Tidak boleh kosong dan melebihi 12 karakter serta minimal 8 karakter): ");
+        fgets(newPassword, sizeof(newPassword), stdin);
+        newPassword[strcspn(newPassword, "\n")] = '\0';
+        printf("| ------------ \n");
+        
+        //verifikasi password
+        if (strcmp(newPassword, "") == 0) {
+            printf("\n\nPassword tidak boleh kosong!\n");
+            
+            goto lanjut_ke_password_baru;
+        }
+        
+        if (strlen(newPassword) < 8) {
+            printf("\n\nPassword harus memiliki minimal 8 karakter!\n");
+            
+            goto lanjut_ke_password_baru;
+        }
+
+        // Periksa apakah password melebihi 12 karakter
+        if (strlen(newPassword) > 12) {
+            printf("\n\nPassword melebihi 12 karakter!\n");
+            
+            goto lanjut_ke_password_baru;
+        }
+        
+        loadingDisplay();
+        
+        printf("\n\n+-------------------------------------------------+\n");
+        printf("| __  __                _        __ _             |\n");
+        printf("||  \\/  | ___ _ __   __| | __ _ / _| |_ __ _ _ __ |\n");
+        printf("|| |\\/| |/ _ \\ '_ \\ / _` |/ _` | |_| __/ _` | '__||\n");
+        printf("|| |  | |  __/ | | | (_| | (_| |  _| || (_| | |   |\n");
+        printf("||_|__|_|\\___|_| |_|\\__,_|\\__,_|_|_ \\__\\__,_|_|   |\n");
+        printf("|| __ )  ___ _ __| |__   __ _ ___(_) |            |\n");
+        printf("||  _ \\ / _ \\ '__| '_ \\ / _` / __| | |            |\n");
+        printf("|| |_) |  __/ |  | | | | (_| \\__ \\ | |            |\n");
+        printf("||____/ \\___|_|  |_| |_|\\__,_|___/_|_|            |\n");
+        printf("+-------------------------------------------------+\n");
+
+        
+        goto start_program_after_signup;
+        
+    } else if (strcmp(mau_login_signup, "l") == '\0' ) {
+        
+        goto start_program_after_login;
+    }
+    
     
     /*Loading displayer start*/
+    start_program_after_login:
     
     printf("\n");
     loadingDisplay();
@@ -316,18 +399,16 @@ int main() {
     
     printf("\n\n\n");
     
-    printf("\t\t\t\t\t\t███╗   ███╗ █████╗ ███████╗██╗   ██╗██╗  ██╗██╗  ██╗ █████╗ ███╗   ██╗\n");
-    printf("\t\t\t\t\t\t████╗ ████║██╔══██╗██╔════╝██║   ██║██║ ██╔╝██║ ██╔╝██╔══██╗████╗  ██║\n");
-    printf("\t\t\t\t\t\t██╔████╔██║███████║███████╗██║   ██║█████╔╝ █████╔╝ ███████║██╔██╗ ██║\n");
-    printf("\t\t\t\t\t\t██║╚██╔╝██║██╔══██║╚════██║██║   ██║██╔═██╗ ██╔═██╗ ██╔══██║██║╚██╗██║\n");
-    printf("\t\t\t\t\t\t██║ ╚═╝ ██║██║  ██║███████║╚██████╔╝██║  ██╗██║  ██╗██║  ██║██║ ╚████║\n");
-    printf("\t\t\t\t\t\t╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝\n");
-    printf("\t\t\t\t\t\t███████╗███╗   ███╗ █████╗ ██╗██╗\n");
-    printf("\t\t\t\t\t\t██╔════╝████╗ ████║██╔══██╗██║██║\n");
-    printf("\t\t\t\t\t\t█████╗  ██╔████╔██║███████║██║██║\n");
-    printf("\t\t\t\t\t\t██╔══╝  ██║╚██╔╝██║██╔══██║██║██║\n");
-    printf("\t\t\t\t\t\t███████╗██║ ╚═╝ ██║██║  ██║██║███████╗\n");
-    printf("\t\t\t\t\t\t╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚══════╝\n\n\n");
+        printf(" __  __    _    ____  _   _ _  ___  __    _    _   _                                                   \n");
+    printf("|  \\/  |  / \\  / ___|| | | | |/ / |/ /   / \\  | \\ | |                                                  \n");
+    printf("| |\\/| | / _ \\ \\___ \\| | | | ' /| ' /   / _ \\ |  \\| |                                                  \n");
+    printf("| |  | |/ ___ \\ ___) | |_| | . \\| . \\  / ___ \\| |\\  |                                                  \n");
+    printf("|_|  |_/_/   \\_\\____/ \\___/|_|\\_\\_|\\_\\/_/   \\_\\_| \\_|___ __  __    _    ___ _                          \n");
+    printf("                                                  | ____|  \\/  |  / \\  |_ _| |                        \n");
+    printf("                                                  |  _| | |\\/| | / _ \\  | || |                        \n");
+    printf("                                                  | |___| |  | |/ ___ \\ | || |___                     \n");
+    printf("                                                  |_____|_|  |_/_/   \\_\\___|_____|                    \n");
+
     
     
     
@@ -339,7 +420,15 @@ int main() {
     user.email[strcspn(user.email, "\n")] = '\0';
     printf("| ---------------- \n\n\n");
     
+    //verifikasi email
+    if (strcmp(user.email, "cgs@gmail.com") == 0) {
+        goto lanjut_ke_password;
+    } else {
+        goto gagal_login;
+    }
     
+    
+    lanjut_ke_password:
     /*Loading displayer start*/
     
     printf("\n");
@@ -350,18 +439,16 @@ int main() {
     
     
     
-    printf("\t\t\t\t\t\t███╗   ███╗ █████╗ ███████╗██╗   ██╗██╗  ██╗██╗  ██╗ █████╗ ███╗   ██╗\n");
-    printf("\t\t\t\t\t\t████╗ ████║██╔══██╗██╔════╝██║   ██║██║ ██╔╝██║ ██╔╝██╔══██╗████╗  ██║\n");
-    printf("\t\t\t\t\t\t██╔████╔██║███████║███████╗██║   ██║█████╔╝ █████╔╝ ███████║██╔██╗ ██║\n");
-    printf("\t\t\t\t\t\t██║╚██╔╝██║██╔══██║╚════██║██║   ██║██╔═██╗ ██╔═██╗ ██╔══██║██║╚██╗██║\n");
-    printf("\t\t\t\t\t\t██║ ╚═╝ ██║██║  ██║███████║╚██████╔╝██║  ██╗██║  ██╗██║  ██║██║ ╚████║\n");
-    printf("\t\t\t\t\t\t╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝\n");
-    printf("\t\t\t\t\t\t██████╗  █████╗ ███████╗███████╗██╗    ██╗ ██████╗ ██████╗ ██████╗    \n");
-    printf("\t\t\t\t\t\t██╔══██╗██╔══██╗██╔════╝██╔════╝██║    ██║██╔═══██╗██╔══██╗██╔══██╗   \n");
-    printf("\t\t\t\t\t\t██████╔╝███████║███████╗███████╗██║ █╗ ██║██║   ██║██████╔╝██║  ██║   \n");
-    printf("\t\t\t\t\t\t██╔═══╝ ██╔══██║╚════██║╚════██║██║███╗██║██║   ██║██╔══██╗██║  ██║   \n");
-    printf("\t\t\t\t\t\t██║     ██║  ██║███████║███████║╚███╔███╔╝╚██████╔╝██║  ██║██████╔╝   \n");
-    printf("\t\t\t\t\t\t╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═════╝    \n\n\n");
+     printf(" __  __    _    ____  _   _ _  ___  __    _    _   _                                                    \n");
+    printf("|  \\/  |  / \\  / ___|| | | | |/ / |/ /   / \\  | \\ | |                                                  \n");
+    printf("| |\\/| | / _ \\ \\___ \\| | | | ' /| ' /   / _ \\ |  \\| |                                                  \n");
+    printf("| |  | |/ ___ \\ ___) | |_| | . \\| . \\  / ___ \\| |\\  |                                                  \n");
+    printf("|_|  |_/_/   \\_\\____/ \\___/|_|\\_\\_|\\_\\/_/   \\_\\_| \\_|__   _    ____ ______        _____  ____  ____    \n");
+    printf("                                                  |  _ \\ / \\  / ___/ ___\\ \\      / / _ \\|  _ \\|  _ \\   \n");
+    printf("                                                  | |_) / _ \\ \\___ \\___ \\ \\ /\\ / / | | | |_) | | | |  \n");
+    printf("                                                  |  __/ ___ \\ ___) |__) |\\ V  V /| |_| |  _ <| |_| |  \n");
+    printf("                                                  |_| /_/   \\_\\____/____/  \\_/\\_/  \\___/|_| \\_\\____/   \n");
+
     
     
     
@@ -391,25 +478,21 @@ int main() {
         
         
         
-    printf("/$$                           /$$                 /$$$$$$$                      /$$                           /$$ /$$\n");
-   printf("| $$                          |__/                | $$__  $$                    | $$                          |__/| $$\n");
-   printf("| $$        /$$$$$$   /$$$$$$  /$$ /$$$$$$$       | $$  \\ $$  /$$$$$$   /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$$ /$$| $$\n");
-   printf("| $$       /$$__  $$ /$$__  $$| $$| $$__  $$      | $$$$$$$  /$$__  $$ /$$__  $$| $$__  $$ |____  $$ /$$_____/| $$| $$\n");
-   printf("| $$      | $$  \\ $$| $$  \\ $$| $$| $$  \\ $$      | $$__  $$| $$$$$$$$| $$  \\__/| $$  \\ $$  /$$$$$$$|  $$$$$$ | $$| $$\n");
-   printf("| $$      | $$  | $$| $$  | $$| $$| $$  | $$      | $$  \\ $$| $$_____/| $$      | $$  | $$ /$$__  $$ \\____  $$| $$| $$\n");
-   printf("| $$$$$$$$|  $$$$$$/|  $$$$$$$| $$| $$  | $$      | $$$$$$$/|  $$$$$$$| $$      | $$  | $$|  $$$$$$$ /$$$$$$$/| $$| $$\n");
-   printf("|________/ \\______/  \\____  $$|__/|__/  |__/      |_______/  \\_______/|__/      |__/  |__/ \\_______/|_______/ |__/|__/\n");
-   printf("                     /$$  \\ $$                                                                                         \n");
-   printf("                    |  $$$$$$/                                                                                          \n");
-   printf("                     \\______/                                                                                           \n");
-
-
+    printf("\n\n\n+----------------------------------------------------------------+\n");
+    printf("| _                _         ____            _               _ _ |\n");
+    printf("|| |    ___   __ _(_)_ __   | __ )  ___ _ __| |__   __ _ ___(_) ||\n");
+    printf("|| |   / _ \\ / _` | | '_ \\  |  _ \\ / _ \\ '__| '_ \\ / _` / __| | ||\n");
+    printf("|| |__| (_) | (_| | | | | | | |_) |  __/ |  | | | | (_| \\__ \\ | ||\n");
+    printf("||_____|\\___/ \\__, |_|_| |_| |____/ \\___|_|  |_| |_|\\__,_|___/_|_|\n");
+    printf("|            |___/                                               |\n");
+    printf("+----------------------------------------------------------------+\n\n\n");
 
 
         
         
     
-
+        start_program_after_signup:
+        printf("\n");
         char choice;
         do {
             
@@ -422,6 +505,19 @@ int main() {
             
             
             /*Loading displayer end*/
+            
+            printf("\n\n\n+---------------------------------------------------------------+\n");
+            printf("|  ____                                                         |\n");
+            printf("| / ___| __ _ _ __ ___   ___                                    |\n");
+            printf("|| |  _ / _` | '_ ` _ \\ / _ \\                                   |\n");
+            printf("|| |_| | (_| | | | | | |  __/                                   |\n");
+            printf("| \\____|\\__,_|_| |_| |_|\\___|                                   |\n");
+            printf("|          _                                  _           _ ___ |\n");
+            printf("| _ __ ___| | _____  _ __ ___   ___ _ __   __| | __ _ ___(_)__ \\|\n");
+            printf("|| '__/ _ \\ |/ / _ \\| '_ ` _ \\ / _ \\ '_ \\ / _` |/ _` / __| | / /|\n");
+            printf("|| | |  __/   < (_) | | | | | |  __/ | | | (_| | (_| \\__ \\ ||_| |\n");
+            printf("||_|  \\___|_|\\_\\___/|_| |_| |_|\\___|_| |_|\\__,_|\\__,_|___/_|(_) |\n");
+            printf("+---------------------------------------------------------------+\n\n\n");
             
             
             
@@ -437,7 +533,7 @@ int main() {
             
             displayRecommendedGames();
             
-            printf("\nApakah Anda ingin membeli Game dari daf? (y/n): ");
+            printf("\nApakah Anda ingin membeli game rekomendasi? (y/n): ");
             scanf(" %c", &choice);
             getchar();
 
@@ -493,7 +589,20 @@ int main() {
                     
                     addToCart(recommendedGames[gameNumber - 1], cart, &cartSize);
                     printf("Game telah ditambahkan ke keranjang.\n");
+                    total_harga += 10000;
                     
+                    
+                    printf("\n\n Isi keranjang anda: \n\n");
+                    
+                    printf("|===============================\n");
+                    printf("|  Isi Keranjang Belanja Anda:  \n");
+                    for (int i = 0; i < cartSize; i++) {
+                    printf("|   %d. %s  $10000\n", i + 1, cart[i].game.title);
+                    
+                    }
+                    
+                    printf("|Total harga: $%.2f ", total_harga);
+                    printf("\n|===============================\n\n\n");
                     
                     
 
@@ -554,7 +663,19 @@ int main() {
 
 
                 printf("Game telah ditambahkan ke keranjang.\n");
+                total_harga += 10000;
                 
+                printf("\n\n Isi keranjang anda: \n\n");
+                    
+                printf("|===============================\n");
+                printf("|  Isi Keranjang Belanja Anda:  \n");
+                for (int i = 0; i < cartSize; i++) {
+                printf("|   %d. %s  $10000\n", i + 1, cart[i].game.title);
+                
+                }
+                
+                printf("|Total harga: $%.2f ", total_harga);
+                printf("\n|===============================\n\n\n");
                 
                 
             }
@@ -604,9 +725,12 @@ int main() {
         printf("|===============================\n");
         printf("|  Isi Keranjang Belanja Anda:  \n");
         for (int i = 0; i < cartSize; i++) {
-        printf("|   %d. %s                      \n", i + 1, cart[i].game.title);
+        printf("|   %d. %s  $10000\n", i + 1, cart[i].game.title);
+        
         }
-        printf("|===============================\n\n\n");
+        
+        printf("|Total harga: $%.2f ", total_harga);
+        printf("\n|===============================\n\n\n");
 
         
         /*Loading displayer start*/
@@ -616,28 +740,40 @@ int main() {
         
         
         /*Loading displayer end*/
+    
+    //masukkin voucher
+    printf("| ----------------------------  \n");
+    printf("| Silahkan masukkan voucher yang anda punya (masukkan \"skip\" jika anda tidak punya voucher): ");
+    scanf("%s", inputVoucher);
+    getchar(); // untuk membersihkan buffer stdin
+
+    printf("| ----------------------------  \n");
+
+    if(strcmp(inputVoucher, "fishingClub2024") == 0) {
+        
+        printf("\nPemasukkan voucher berhasil, sekarang total harga game yang anda beli akan mendapatkan pengurangan harga sebesar $5.000,00 :)\n");
+        
+    } else if (strcmp(inputVoucher, "skip") == 0) {
+        
+        printf("\nOk, tidak masalah :) \n");
+
+    } else {
+        
+        printf("\nMohon maaf, voucher anda tidak valid.\n");
+    }
         
         
-    printf("ooooooooo.    o8o  oooo   o8o  oooo             ooo        ooooo               .                   .o8            \n");
-   printf("`888   `Y88.  `\"'  `888   `\"'  `888             `88.       .888'             .o8                  \"888            \n");
-   printf(" 888   .d88' oooo   888  oooo   888 .oo.         888b     d'888   .ooooo.  .o888oo  .ooooo.   .oooo888   .ooooo.  \n");
-   printf(" 888ooo88P'  `888   888  `888   888P\"Y88b        8 Y88. .P  888  d88' `88b   888   d88' `88b d88' `888  d88' `88b \n");
-   printf(" 888          888   888   888   888   888        8  `888'   888  888ooo888   888   888   888 888   888  888ooo888 \n");
-   printf(" 888          888   888   888   888   888        8    Y     888  888    .o   888 . 888   888 888   888  888    .o \n");
-   printf("o888o        o888o o888o o888o o888o o888o      o8o        o888o `Y8bod8P'   \"888\" `Y8bod8P' `Y8bod88P\" `Y8bod8P' \n");
-   printf("                                                                                                                  \n");
-   printf("                                                                                                                  \n");
-   printf("                                                                                                                  \n");
-   printf("ooooooooo.                                .o8                                                                      \n");
-   printf("`888   `Y88.                             \"888                                                                      \n");
-   printf(" 888   .d88'  .ooooo.  ooo. .oo.  .oo.    888oooo.   .oooo.   oooo    ooo  .oooo.   oooo d8b  .oooo.   ooo. .oo.  \n");
-   printf(" 888ooo88P'  d88' `88b `888P\"Y88bP\"Y88b   d88' `88b `P  )88b   `88.  .8'  `P  )88b  `888\"\"8P `P  )88b  `888P\"Y88b \n");
-   printf(" 888         888ooo888  888   888   888   888   888  .oP\"888    `88..8'    .oP\"888   888      .oP\"888   888   888 \n");
-   printf(" 888         888    .o  888   888   888   888   888 d8(  888     `888'    d8(  888   888     d8(  888   888   888 \n");
-   printf("o888o        `Y8bod8P' o888o o888o o888o  `Y8bod8P' `Y888\"\"8o     .8'     `Y888\"\"8o d888b    `Y888\"\"8o o888o o888o\n");
-   printf("                                                              .o..P'                                               \n");
-   printf("                                                              `Y8P'                                                \n");
-        
+        printf("\n\n\n");
+    printf(" ____ ___ _     ___ _   _   __  __ _____ _____ ___  ____  _____ \n");
+    printf("|  _ \\_ _| |   |_ _| | | | |  \\/  | ____|_   _/ _ \\|  _ \\| ____|\n");
+    printf("| |_) | || |    | || |_| | | |\\/| |  _|   | || | | | | | |  _|  \n");
+    printf("|  __/| || |___ | ||  _  | | |  | | |___  | || |_| | |_| | |___ \n");
+    printf("|_|__|___|_____|___|_|_|_| |_|__|_|_____| |_|_\\___/|____/|_____|\n");
+    printf("|  _ \\| ____|  \\/  | __ )  / \\ \\ / // \\  |  _ \\    / \\  | \\ | |\n");
+    printf("| |_) |  _| | |\\/| |  _ \\ / _ \\ V // _ \\ | |_) |  / _ \\ |  \\| |\n");
+    printf("|  __/| |___| |  | | |_) / ___ \\ |/ ___ \\|  _ <  / ___ \\| |\\  |\n");
+    printf("|_|   |_____|_|  |_|____/_/   \\_\\_/_/   \\_\\_| \\_\\/_/   \\_\\_| \\_|\n");
+
 
 
         int pilihan;
@@ -650,6 +786,7 @@ int main() {
         printf("| Masukkan pilihan Anda (1-4):  ");
         scanf("%d", &pilihan);
         getchar();
+        printf("| --------------------------- \n\n\n");
 
 
 
@@ -661,7 +798,12 @@ int main() {
            
             case 1:
                 {
-                    
+                    //cek apakah berhak kena potong harga atau engga
+                    if(strcmp(inputVoucher, "fishingClub2024") == 0) {
+        
+                        total_harga -= 5000.00;
+                        
+                    }
                     
                     printf("\n\n\n");
                     
@@ -682,20 +824,59 @@ int main() {
                     
                     
                     int nomorKartuKredit, pin;
-        
-                    
+                    //double bayar;
+
+                    loadingDisplay();
+
+                    printf("\n\n__  __                 _    _                             \n");
+                    printf("|  \\/  | __ _ ___ _   _| | _| | ____ _ _ __    _ __   ___  \n");
+                    printf("| |\\/| |/ _` / __| | | | |/ / |/ / _` | '_ \\  | '_ \\ / _ \\ \n");
+                    printf("| |  | | (_| \\__ \\ |_| |   <|   < (_| | | | | | | | | (_) |\n");
+                    printf("|_|  |_|\\__,_|___/\\__,_|_|\\_\\_|\\_\\__,_|_| |_| |_| |_|\\___/ \n");
+                    printf("| | ____ _ _ __| |_ _   _  | | ___ __ ___  __| (_) |_      \n");
+                    printf("| |/ / _` | '__| __| | | | | |/ / '__/ _ \\/ _` | | __|     \n");
+                    printf("|   < (_| | |  | |_| |_| | |   <| | |  __/ (_| | | |_      \n");
+                    printf("|_|\\_\\__,_|_|   \\__|\\__,_| |_|\\_\\_|  \\___|\\__,_|_|\\__|     \n\n\n");
+
                     
                     printf("| ----------------------------  \n");
                     printf("| Masukkan nomor kartu kredit: ");
                     scanf("%d", &nomorKartuKredit);
                     printf("| ----------------------------  \n");
 
+                    loadingDisplay();
+
+                    printf("\n\n__  __                 _    _                               ____ ___ _   _ \n");
+                    printf("|  \\/  | __ _ ___ _   _| | _| | ____ _ _ __    _ __   ___   |  _ \\_ _| \\ | |\n");
+                    printf("| |\\/| |/ _` / __| | | | |/ / |/ / _` | '_ \\  | '_ \\ / _ \\  | |_) | ||  \\| |\n");
+                    printf("| |  | | (_| \\__ \\ |_| |   <|   < (_| | | | | | | | | (_) | |  __/| || |\\  |\n");
+                    printf("|_|  |_|\\__,_|___/\\__,_|_|\\_\\_|\\_\\__,_|_| |_| |_| |_|\\___/  |_|  |___|_| \\_|\n\n\n");
 
 
                     printf("\n| -----------  \n");
                     printf("| Masukkan PIN: ");
                     scanf("%d", &pin);
                     printf("| -----------  \n");
+
+                    
+                    
+                    m_saldo_visa:
+                        loadingDisplay();
+
+                        printf("\n\n| -----------  \n");
+                        printf("| Total harga game yang dibeli: $%.2f  \n", total_harga);
+                        printf("| Masukkan saldo: $");
+                        scanf("%lf", &bayar);
+                        printf("| -----------  \n\n");
+                    
+                    if(bayar < total_harga) {
+
+                        loadingDisplay();
+
+                        printf("\n\n|Saldo anda tidak cukup.\n");
+                        printf("|Total harga: $%.2f \n\n", total_harga);
+                        goto m_saldo_visa;
+                    }
 
 
 
@@ -712,6 +893,13 @@ int main() {
             case 2:
                 {   
                     
+                    //cek apakah berhak kena potong harga atau engga
+                    if(strcmp(inputVoucher, "fishingClub2024") == 0) {
+        
+                        total_harga -= 5000.00;
+                        
+                    }
+                    
                     
                     printf("\n\n\n");
                     
@@ -727,7 +915,7 @@ int main() {
                     printf("||  \\/  | __ _ ___| |_ ___ _ __ ___ __ _ _ __ __| ||\n");
                     printf("|| |\\/| |/ _` / __| __/ _ \\ '__/ __/ _` | '__/ _` ||\n");
                     printf("|| |  | | (_| \\__ \\ ||  __/ | | (_| (_| | | | (_| ||\n");
-                    printf("||_|  |_|\__,_|___/\\__\\___|_|  \\___\\__,_|_|  \\__,_|||\n");
+                    printf("||_|  |_|\\__,_|___/\\__\\___|_|  \\___\\__,_|_|  \\__,_|||\n");
                     printf("+--------------------------------------------------+\n\n\n");
                     
                     
@@ -735,7 +923,18 @@ int main() {
                     
                     int nomorKartuKredit, pin;
 
+                    
+                    loadingDisplay();
 
+                    printf("\n\n__  __                 _    _                             \n");
+                    printf("|  \\/  | __ _ ___ _   _| | _| | ____ _ _ __    _ __   ___  \n");
+                    printf("| |\\/| |/ _` / __| | | | |/ / |/ / _` | '_ \\  | '_ \\ / _ \\ \n");
+                    printf("| |  | | (_| \\__ \\ |_| |   <|   < (_| | | | | | | | | (_) |\n");
+                    printf("|_|  |_|\\__,_|___/\\__,_|_|\\_\\_|\\_\\__,_|_| |_| |_| |_|\\___/ \n");
+                    printf("| | ____ _ _ __| |_ _   _  | | ___ __ ___  __| (_) |_      \n");
+                    printf("| |/ / _` | '__| __| | | | | |/ / '__/ _ \\/ _` | | __|     \n");
+                    printf("|   < (_| | |  | |_| |_| | |   <| | |  __/ (_| | | |_      \n");
+                    printf("|_|\\_\\__,_|_|   \\__|\\__,_| |_|\\_\\_|  \\___|\\__,_|_|\\__|     \n\n\n");
 
 
                     printf("| ----------------------------  \n");
@@ -743,13 +942,32 @@ int main() {
                     scanf("%d", &nomorKartuKredit);
                     printf("| ----------------------------  \n");
 
+                    loadingDisplay();
 
+                    printf("\n\n__  __                 _    _                               ____ ___ _   _ \n");
+                    printf("|  \\/  | __ _ ___ _   _| | _| | ____ _ _ __    _ __   ___   |  _ \\_ _| \\ | |\n");
+                    printf("| |\\/| |/ _` / __| | | | |/ / |/ / _` | '_ \\  | '_ \\ / _ \\  | |_) | ||  \\| |\n");
+                    printf("| |  | | (_| \\__ \\ |_| |   <|   < (_| | | | | | | | | (_) | |  __/| || |\\  |\n");
+                    printf("|_|  |_|\\__,_|___/\\__,_|_|\\_\\_|\\_\\__,_|_| |_| |_| |_|\\___/  |_|  |___|_| \\_|\n\n\n");
 
 
                     printf("\n| -----------  \n");
-                    printf("Masukkan PIN: ");
+                    printf("|Masukkan PIN: ");
                     scanf("%d", &pin);
                     printf("| -----------  \n");
+                    
+                    m_saldo_mastercard:
+                        printf("\n| -----------  \n");
+                        printf("| Total harga game yang dibeli: $%.2f  \n", total_harga);
+                        printf("| Masukkan saldo: $");
+                        scanf("%lf", &bayar);
+                        printf("| -----------  \n");
+                    
+                    if(bayar < total_harga) {
+                        printf("|Saldo anda tidak cukup.\n");
+                        printf("|Total harga: $%.2f ", total_harga);
+                        goto m_saldo_mastercard;
+                    }
 
                     printf("\nPembayaran dengan MasterCard berhasil!\n");
 
@@ -759,7 +977,13 @@ int main() {
                 }
             case 3:
                 {   
+                    
+                    //cek apakah berhak kena potong harga atau engga
+                    if(strcmp(inputVoucher, "fishingClub2024") == 0) {
         
+                        total_harga -= 5000.00;
+                        
+                    }
                     
                     
                     printf("\n\n\n");
@@ -777,27 +1001,79 @@ int main() {
                     printf("||  _ \\  __ _ _ __   __ _ |\n");
                     printf("|| | | |/ _` | '_ \\ / _` ||\n");
                     printf("|| |_| | (_| | | | | (_| ||\n");
-                    printf("||____/ \\__,_|_| |_|\__,_||\n");
+                    printf("||____/ \\__,_|_| |_|\\__,_||\n");
                     printf("+-------------------------+\n\n\n");
                     
                     
                     char email[100], password[100];
                     int nomorTelepon;
 
+                    loadingDisplay();
+
+                    printf("\n\n\n");
+    
+                    printf(" __  __    _    ____  _   _ _  ___  __    _    _   _                                                   \n");
+                    printf("|  \\/  |  / \\  / ___|| | | | |/ / |/ /   / \\  | \\ | |                                                  \n");
+                    printf("| |\\/| | / _ \\ \\___ \\| | | | ' /| ' /   / _ \\ |  \\| |                                                  \n");
+                    printf("| |  | |/ ___ \\ ___) | |_| | . \\| . \\  / ___ \\| |\\  |                                                  \n");
+                    printf("|_|  |_/_/   \\_\\____/ \\___/|_|\\_\\_|\\_\\/_/   \\_\\_| \\_|___ __  __    _    ___ _                          \n");
+                    printf("                                                  | ____|  \\/  |  / \\  |_ _| |                        \n");
+                    printf("                                                  |  _| | |\\/| | / _ \\  | || |                        \n");
+                    printf("                                                  | |___| |  | |/ ___ \\ | || |___                     \n");
+                    printf("                                                  |_____|_|  |_/_/   \\_\\___|_____|                    \n\n\n");
+
                     printf("| ----------------  \n");
                     printf("| Masukkan email: ");
                     scanf("%s", email);
                     printf("| ----------------  \n");
+
+                    loadingDisplay();
+
+                    printf("\n\n\n __  __    _    ____  _   _ _  ___  __    _    _   _                                                    \n");
+                    printf("|  \\/  |  / \\  / ___|| | | | |/ / |/ /   / \\  | \\ | |                                                  \n");
+                    printf("| |\\/| | / _ \\ \\___ \\| | | | ' /| ' /   / _ \\ |  \\| |                                                  \n");
+                    printf("| |  | |/ ___ \\ ___) | |_| | . \\| . \\  / ___ \\| |\\  |                                                  \n");
+                    printf("|_|  |_/_/   \\_\\____/ \\___/|_|\\_\\_|\\_\\/_/   \\_\\_| \\_|__   _    ____ ______        _____  ____  ____    \n");
+                    printf("                                                  |  _ \\ / \\  / ___/ ___\\ \\      / / _ \\|  _ \\|  _ \\   \n");
+                    printf("                                                  | |_) / _ \\ \\___ \\___ \\ \\ /\\ / / | | | |_) | | | |  \n");
+                    printf("                                                  |  __/ ___ \\ ___) |__) |\\ V  V /| |_| |  _ <| |_| |  \n");
+                    printf("                                                  |_| /_/   \\_\\____/____/  \\_/\\_/  \\___/|_| \\_\\____/   \n\n\n");
 
                     printf("\n| -----------------  \n");
                     printf("| Masukkan password: ");
                     scanf("%s", password);
                     printf("| -----------------  \n");
 
+                    loadingDisplay();
+
+                    printf("\n\n\n__  __                 _    _                             \n");
+                    printf("|  \\/  | __ _ ___ _   _| | _| | ____ _ _ __    _ __   ___  \n");
+                    printf("| |\\/| |/ _` / __| | | | |/ / |/ / _` | '_ \\  | '_ \\ / _ \\ \n");
+                    printf("| |  | | (_| \\__ \\ |_| |   <|   < (_| | | | | | | | | (_) |\n");
+                    printf("|_|  |_|\\__,_|___/\\__,_|_|\\_\\_|\\_\\__,_|_| |_| |_| |_|\\___/ \n");
+                    printf("| |_ ___| | ___ _ __   ___  _ __                           \n");
+                    printf("| __/ _ \\ |/ _ \\ '_ \\ / _ \\| '_ \\                          \n");
+                    printf("| ||  __/ |  __/ |_) | (_) | | | |                         \n");
+                    printf(" \\__\\___|_|\\___| .__/ \\___/|_| |_|                         \n");
+                    printf("               |_|                                         \n\n\n");
+
                     printf("\n| ----------------------  \n");
                     printf("| Masukkan nomor telepon: ");
                     scanf("%d", &nomorTelepon);
                     printf("| ----------------------  \n");
+                    
+                    m_saldo_dana:
+                        printf("\n| -----------  \n");
+                        printf("| Total harga game yang dibeli: $%.2f  \n", total_harga);
+                        printf("| Masukkan saldo: $");
+                        scanf("%lf", &bayar);
+                        printf("| -----------  \n");
+                    
+                    if(bayar < total_harga) {
+                        printf("|Saldo anda tidak cukup.\n");
+                        printf("|Total harga: $%.2f ", total_harga);
+                        goto m_saldo_dana;
+                    }
 
                     printf("\nPembayaran dengan Dana berhasil!\n");
 
@@ -807,6 +1083,13 @@ int main() {
                 }
             case 4:
                 {   
+                    
+                    //cek apakah berhak kena potong harga atau engga
+                    if(strcmp(inputVoucher, "fishingClub2024") == 0) {
+        
+                        total_harga -= 5000.00;
+                        
+                    }
                     
                     printf("\n\n\n");
                     
@@ -830,24 +1113,77 @@ int main() {
                     char email[100], password[100];
                     int nomorTelepon;
 
+                    loadingDisplay();
+
+                    printf("\n\n\n");
+    
+                    printf(" __  __    _    ____  _   _ _  ___  __    _    _   _                                                   \n");
+                    printf("|  \\/  |  / \\  / ___|| | | | |/ / |/ /   / \\  | \\ | |                                                  \n");
+                    printf("| |\\/| | / _ \\ \\___ \\| | | | ' /| ' /   / _ \\ |  \\| |                                                  \n");
+                    printf("| |  | |/ ___ \\ ___) | |_| | . \\| . \\  / ___ \\| |\\  |                                                  \n");
+                    printf("|_|  |_/_/   \\_\\____/ \\___/|_|\\_\\_|\\_\\/_/   \\_\\_| \\_|___ __  __    _    ___ _                          \n");
+                    printf("                                                  | ____|  \\/  |  / \\  |_ _| |                        \n");
+                    printf("                                                  |  _| | |\\/| | / _ \\  | || |                        \n");
+                    printf("                                                  | |___| |  | |/ ___ \\ | || |___                     \n");
+                    printf("                                                  |_____|_|  |_/_/   \\_\\___|_____|                    \n\n\n");
+
                     printf("| ----------------  \n");
                     printf("| Masukkan email: ");
                     scanf("%s", email);
                     printf("| ---------------- \n");
+
+                    loadingDisplay();
+
+                    printf("\n\n\n __  __    _    ____  _   _ _  ___  __    _    _   _                                                    \n");
+                    printf("|  \\/  |  / \\  / ___|| | | | |/ / |/ /   / \\  | \\ | |                                                  \n");
+                    printf("| |\\/| | / _ \\ \\___ \\| | | | ' /| ' /   / _ \\ |  \\| |                                                  \n");
+                    printf("| |  | |/ ___ \\ ___) | |_| | . \\| . \\  / ___ \\| |\\  |                                                  \n");
+                    printf("|_|  |_/_/   \\_\\____/ \\___/|_|\\_\\_|\\_\\/_/   \\_\\_| \\_|__   _    ____ ______        _____  ____  ____    \n");
+                    printf("                                                  |  _ \\ / \\  / ___/ ___\\ \\      / / _ \\|  _ \\|  _ \\   \n");
+                    printf("                                                  | |_) / _ \\ \\___ \\___ \\ \\ /\\ / / | | | |_) | | | |  \n");
+                    printf("                                                  |  __/ ___ \\ ___) |__) |\\ V  V /| |_| |  _ <| |_| |  \n");
+                    printf("                                                  |_| /_/   \\_\\____/____/  \\_/\\_/  \\___/|_| \\_\\____/   \n\n\n");
 
                     printf("\n| ----------------- \n");
                     printf("| Masukkan password: ");
                     scanf("%s", password);
                     printf("| ----------------- \n");
 
+                    loadingDisplay();
+
+                    printf("\n\n\n__  __                 _    _                             \n");
+                    printf("|  \\/  | __ _ ___ _   _| | _| | ____ _ _ __    _ __   ___  \n");
+                    printf("| |\\/| |/ _` / __| | | | |/ / |/ / _` | '_ \\  | '_ \\ / _ \\ \n");
+                    printf("| |  | | (_| \\__ \\ |_| |   <|   < (_| | | | | | | | | (_) |\n");
+                    printf("|_|  |_|\\__,_|___/\\__,_|_|\\_\\_|\\_\\__,_|_| |_| |_| |_|\\___/ \n");
+                    printf("| |_ ___| | ___ _ __   ___  _ __                           \n");
+                    printf("| __/ _ \\ |/ _ \\ '_ \\ / _ \\| '_ \\                          \n");
+                    printf("| ||  __/ |  __/ |_) | (_) | | | |                         \n");
+                    printf(" \\__\\___|_|\\___| .__/ \\___/|_| |_|                         \n");
+                    printf("               |_|                                         \n\n\n");
+
                     printf("\n| ---------------------- \n");
                     printf("| Masukkan nomor telepon: ");
                     scanf("%d", &nomorTelepon);
                     printf("| ---------------------- \n");
+                    
+                    m_saldo_linkaja:
+                        printf("\n| -----------  \n");
+                        printf("| Total harga game yang dibeli: $%.2f  \n", total_harga);
+                        printf("| Masukkan saldo: $");
+                        scanf("%lf", &bayar);
+                        printf("| -----------  \n");
+                    
+                    if(bayar < total_harga) {
+                        printf("|Saldo anda tidak cukup.\n");
+                        printf("|Total harga: $%.2f ", total_harga);
+                        goto m_saldo_linkaja;
+                    }
 
                     printf("\nPembayaran dengan Linkaja berhasil!\n");
 
                     displayReceipt(cart, cartSize); 
+                    
 
                     break;
                 }
@@ -886,7 +1222,7 @@ int main() {
     else {
         
         
-    
+        gagal_login:
         
         printf("  +-------------------------------------------------------------+\n");
         printf("  | _                _                                 _      __|\n");
@@ -905,3 +1241,11 @@ int main() {
 }
 
  
+
+
+
+
+
+
+
+
