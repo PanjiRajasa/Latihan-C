@@ -291,7 +291,7 @@ int main() {
     
     fgets(mau_login_signup, sizeof(mau_login_signup), stdin);
     mau_login_signup[strcspn(mau_login_signup, "\n")] = '\0';
-    printf("| ------------ ");
+    printf("| ------------ \n");
     
     if (strcmp(mau_login_signup, "d") == '\0' ) {
         
@@ -493,7 +493,7 @@ int main() {
     
         start_program_after_signup:
         printf("\n");
-        char choice;
+        char choice[10];
         do {
             
             
@@ -534,20 +534,20 @@ int main() {
             displayRecommendedGames();
             
             printf("\nApakah Anda ingin membeli game rekomendasi? (y/n): ");
-            scanf(" %c", &choice);
-            getchar();
+            fgets(choice, sizeof(choice), stdin);
+            choice[strcspn(choice, "\n")] = '\0';
 
 
 
 
-            if (choice == 'y' || choice == 'Y') {
+                if (strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0) {
                 
                 
                 
                 
                 printf("\nMasukkan nomor game rekomendasi yang ingin Anda beli: ");
                 int gameNumber;
-
+                
                 scanf("%d", &gameNumber);
                 getchar();
 
@@ -660,13 +660,23 @@ int main() {
             loadingDisplay();
             printf("\n");
             
+            printf("\n|===============================\n");
+            printf("|  Isi Keranjang Belanja Anda:  \n");
+            for (int i = 0; i < cartSize; i++) {
+            printf("|   %d. %s  $10000\n", i + 1, cart[i].game.title);
+        
+            }
+        
+            printf("|Total harga: $%.2f ", total_harga);
+            printf("\n|===============================\n\n\n");
+            
             printf("Apakah Anda ingin membeli lagi? (y/n): ");
-            scanf(" %c", &choice);
-            getchar();
+            fgets(choice, sizeof(choice), stdin);
+            choice[strcspn(choice, "\n")] = '\0';
             
             
             
-        } while (choice == 'y' || choice == 'Y');
+        } while (strcmp(choice, "y") == 0 || strcmp(choice, "Y") == 0);
 
         
         /*Loading displayer start*/
@@ -1238,10 +1248,11 @@ int main() {
                     printf("                                                  | |___| |  | |/ ___ \\ | || |___                     \n");
                     printf("                                                  |_____|_|  |_/_/   \\_\\___|_____|                    \n\n\n");
                     
-                    awal_masukkan_email_linkaja:
+                    lanjut_ke_email_linkaja:
                     printf("| ----------------  \n");
                     printf("| Masukkan email: ");
-                    scanf("%s", email);
+                    fgets(email, sizeof(email), stdin);
+                    email[strcspn(email, "\n")] = '\0';
                     printf("| ----------------  \n");
                     
                     //verifikasi email
@@ -1252,13 +1263,13 @@ int main() {
                     }
                     
                     if (strstr(email, "@gmail.com") || strstr(email, "@yahoo.com") || strstr(email, "@outlook.com")) {
-                        goto lanjut_ke_password_linkaja_setelah_email;
+                        goto lanjut_ke_password_linkaja;
                     } else {
                         printf("\n\nEmail tidak valid. Mohon masukkan email dengan format @gmail.com, @yahoo.com, atau @outlook.com.\n");
-                        goto awal_masukkan_email_linkaja;
+                        goto lanjut_ke_email_linkaja;
                     }
                     
-                    lanjut_ke_password_linkaja:
+                    
 
                     loadingDisplay();
 
@@ -1275,7 +1286,8 @@ int main() {
                     lanjut_ke_password_linkaja:
                     printf("\n| -----------------  \n");
                     printf("| Masukkan password (Tidak boleh kosong dan melebihi 12 karakter serta minimal 8 karakter): ");
-                    scanf("%s", password);
+                    fgets(password, sizeof(password), stdin);
+                    password[strcspn(password, "\n")] = '\0';
                     printf("| -----------------  \n");
                     
                     //verifikasi password
@@ -1311,12 +1323,39 @@ int main() {
                     printf("| ||  __/ |  __/ |_) | (_) | | | |                         \n");
                     printf(" \\__\\___|_|\\___| .__/ \\___/|_| |_|                         \n");
                     printf("               |_|                                         \n\n\n");
-
+                    
+                    lanjut_ke_no_telepon_linkaja:
                     printf("\n| ---------------------- \n");
                     printf("| Masukkan nomor telepon: ");
                     fgets(nomorTelepon, sizeof(nomorTelepon), stdin);
                     nomorTelepon[strcspn(nomorTelepon, "\n")] = '\0';
                     printf("| ---------------------- \n");
+                    
+                    // verifikasi nomor telepon
+                    if (strlen(nomorTelepon) > 13) {
+                        printf("\n\nNomor telepon harus memiliki maksimal 13 karakter dan minimal 11 karakter serta berawalan 0!\n");
+                        
+                        goto lanjut_ke_no_telepon_linkaja;
+                    }
+                    
+                    if (strlen(nomorTelepon) < 11) {
+                        printf("\n\nNomor telepon harus memiliki maksimal 13 karakter dan minimal 11 karakter serta berawalan 0!\n");
+                        
+                        goto lanjut_ke_no_telepon_linkaja;
+                    }
+                    
+                    if (nomorTelepon[0] != '0') {
+                        printf("\n\nNomor telepon harus memiliki maksimal 13 karakter dan minimal 11 karakter serta berawalan 0!\n");
+                        
+                        goto lanjut_ke_no_telepon_linkaja;
+                        
+                    }
+                    
+                    if(strcmp(nomorTelepon, "") == 0) {
+                        printf("\n\nNomor telepon harus memiliki maksimal 13 karakter dan minimal 11 karakter serta berawalan 0!\n");
+                        
+                        goto lanjut_ke_no_telepon_linkaja;
+                    }
                     
                     m_saldo_linkaja:
                         printf("\n| -----------  \n");
