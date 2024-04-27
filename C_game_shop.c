@@ -55,7 +55,7 @@ void loadingDisplay() {
     
     sleep(1);
     
-    printf(".\n");
+    printf(".\n\n");
     
     fflush(stdout);
     
@@ -113,7 +113,7 @@ void displayRecommendedGames() {
 
 
 
-
+//Refrensi kode sebelumnya
 // untuk menambahkan game ke cart
 /*
 struct Game game
@@ -772,6 +772,7 @@ int main() {
            
            
             case 1:
+            //pembayaran Visa
                 {
                     //cek apakah berhak kena potong harga atau engga
                     if(strcmp(inputVoucher, "fishingClub2024") == 0) {
@@ -798,8 +799,10 @@ int main() {
                     printf("+--------------------------+\n\n\n");
                     
                     
-                    int nomorKartuKredit, pin;
-                    //double bayar;
+                    //variabel
+                    char nomorKartuKredit[100];
+                    char pin[100];
+                    //double bayar; /*refrensi kode sebelumnya*/
 
                     loadingDisplay();
 
@@ -813,25 +816,63 @@ int main() {
                     printf("|   < (_| | |  | |_| |_| | |   <| | |  __/ (_| | | |_      \n");
                     printf("|_|\\_\\__,_|_|   \\__|\\__,_| |_|\\_\\_|  \\___|\\__,_|_|\\__|     \n\n\n");
 
-                    
+                    lanjut_ke_no_kredit_visa:
                     printf("| ----------------------------  \n");
                     printf("| Masukkan nomor kartu kredit: ");
-                    scanf("%d", &nomorKartuKredit);
+                    fgets(nomorKartuKredit, sizeof(nomorKartuKredit), stdin);
+                    nomorKartuKredit[strcspn(nomorKartuKredit, "\n")] = '\0';
+                    
+                    // scanf("%s", &nomorKartuKredit); /* refrensi kode sebelumnya*/
+                    
                     printf("| ----------------------------  \n");
+                    
+                    //verifikasi nomor kartu kredit
+                    //kalau nomor kartu kredit kosong
+                    if (strcmp(nomorKartuKredit, "") == 0) {
+                        printf("\n\nNomor kartu kredit tidak boleh kosong!\n");
+                        
+                        goto lanjut_ke_no_kredit_visa;
+                    }
+                    
+                    // Periksa apakah nomor kartu kredit terdiri dari 16 karakter atau tidak
+                    if (strlen(nomorKartuKredit) != 16) {
+                        printf("\n\nNomor kartu kredit harus terdiri dari 16 karakter!\n");
+                        
+                        goto lanjut_ke_no_kredit_visa;
+                    }
+            
+            
 
                     loadingDisplay();
-
+                    
+                    
                     printf("\n\n__  __                 _    _                               ____ ___ _   _ \n");
                     printf("|  \\/  | __ _ ___ _   _| | _| | ____ _ _ __    _ __   ___   |  _ \\_ _| \\ | |\n");
                     printf("| |\\/| |/ _` / __| | | | |/ / |/ / _` | '_ \\  | '_ \\ / _ \\  | |_) | ||  \\| |\n");
                     printf("| |  | | (_| \\__ \\ |_| |   <|   < (_| | | | | | | | | (_) | |  __/| || |\\  |\n");
                     printf("|_|  |_|\\__,_|___/\\__,_|_|\\_\\_|\\_\\__,_|_| |_| |_| |_|\\___/  |_|  |___|_| \\_|\n\n\n");
 
-
+                    lanjut_ke_no_pin_visa:
                     printf("\n| -----------  \n");
                     printf("| Masukkan PIN: ");
-                    scanf("%d", &pin);
+                    fgets(pin, sizeof(pin), stdin);
+                    pin[strcspn(pin, "\n")] = '\0';
                     printf("| -----------  \n");
+                    
+                    //verifikasi nomor pin
+                    //kalau nomor pin kosong
+                    if (strcmp(pin, "") == 0) {
+                        printf("\n\nNomor pin tidak boleh kosong!\n");
+                        
+                        goto lanjut_ke_no_pin_visa;
+                    }
+                    
+                    // Periksa apakah nomor PIN terdiri dari 4 karakter atau tidak
+                    if (strlen(pin) != 4) {
+                        printf("\n\nNomor PIN harus terdiri dari 4 karakter!\n");
+                        
+                        goto lanjut_ke_no_pin_visa;
+                    }
 
                     
                     
@@ -866,6 +907,7 @@ int main() {
                 
                 
             case 2:
+            //pembayaran mastercard 
                 {   
                     
                     //cek apakah berhak kena potong harga atau engga
@@ -895,8 +937,8 @@ int main() {
                     
                     
                     
-                    
-                    int nomorKartuKredit, pin;
+                    char nomorKartuKredit[100];
+                    char pin[100];
 
                     
                     loadingDisplay();
@@ -911,11 +953,28 @@ int main() {
                     printf("|   < (_| | |  | |_| |_| | |   <| | |  __/ (_| | | |_      \n");
                     printf("|_|\\_\\__,_|_|   \\__|\\__,_| |_|\\_\\_|  \\___|\\__,_|_|\\__|     \n\n\n");
 
-
+                    
+                    lanjut_ke_no_kredit_mastercard:
                     printf("| ----------------------------  \n");
                     printf("| Masukkan nomor kartu kredit: ");
-                    scanf("%d", &nomorKartuKredit);
+                    fgets(nomorKartuKredit, sizeof(nomorKartuKredit), stdin);
+                    nomorKartuKredit[strcspn(nomorKartuKredit, "\n")] = '\0';
                     printf("| ----------------------------  \n");
+                    
+                    //verifikasi nomor kartu kredit
+                    //kalau nomor kartu kredit kosong
+                    if (strcmp(nomorKartuKredit, "") == 0) {
+                        printf("\n\nNomor kartu kredit tidak boleh kosong!\n");
+                        
+                        goto lanjut_ke_no_kredit_mastercard;
+                    }
+                    
+                    // Periksa apakah nomor kartu kredit terdiri dari 16 karakter atau tidak
+                    if (strlen(nomorKartuKredit) != 16) {
+                        printf("\n\nNomor kartu kredit harus terdiri dari 16 karakter!\n");
+                        
+                        goto lanjut_ke_no_kredit_mastercard;
+                    }
 
                     loadingDisplay();
 
@@ -925,11 +984,29 @@ int main() {
                     printf("| |  | | (_| \\__ \\ |_| |   <|   < (_| | | | | | | | | (_) | |  __/| || |\\  |\n");
                     printf("|_|  |_|\\__,_|___/\\__,_|_|\\_\\_|\\_\\__,_|_| |_| |_| |_|\\___/  |_|  |___|_| \\_|\n\n\n");
 
-
+                    
+                    lanjut_ke_no_pin_mastercard:
                     printf("\n| -----------  \n");
                     printf("|Masukkan PIN: ");
-                    scanf("%d", &pin);
+                    fgets(pin, sizeof(pin), stdin);
+                    pin[strcspn(pin, "\n")] = '\0';
                     printf("| -----------  \n");
+                    
+                    //verifikasi nomor pin
+                    //kalau nomor pin kosong
+                    if (strcmp(pin, "") == 0) {
+                        printf("\n\nNomor pin tidak boleh kosong!\n");
+                        
+                        goto lanjut_ke_no_pin_mastercard;
+                    }
+                    
+                    // Periksa apakah nomor PIN terdiri dari 4 karakter atau tidak
+                    if (strlen(pin) != 4) {
+                        printf("\n\nNomor PIN harus terdiri dari 4 karakter!\n");
+                        
+                        goto lanjut_ke_no_pin_mastercard;
+                    }
+
                     
                     m_saldo_mastercard:
                         printf("\n| -----------  \n");
@@ -951,6 +1028,7 @@ int main() {
                     break;
                 }
             case 3:
+            //pembayaran Dana
                 {   
                     
                     //cek apakah berhak kena potong harga atau engga
@@ -1000,7 +1078,8 @@ int main() {
                     awal_masukkan_email_dana:
                     printf("| ----------------  \n");
                     printf("| Masukkan email: ");
-                    scanf("%s", email);
+                    fgets(email, sizeof(email), stdin);
+                    email[strcspn(email, "\n")] = '\0';
                     printf("| ----------------  \n");
                     
                     //verifikasi email
@@ -1027,7 +1106,8 @@ int main() {
                     lanjut_ke_password_dana:
                     printf("\n| -----------------  \n");
                     printf("| Masukkan password (Tidak boleh kosong dan melebihi 12 karakter serta minimal 8 karakter): ");
-                    scanf("%s", password);
+                    fgets(password, sizeof(password), stdin);
+                    password[strcspn(password, "\n")] = '\0';
                     printf("| -----------------  \n");
                     
                     //verifikasi password
@@ -1112,6 +1192,7 @@ int main() {
                     break;
                 }
             case 4:
+            //pembayaran Linkaja
                 {   
                     
                     //cek apakah berhak kena potong harga atau engga
@@ -1164,6 +1245,12 @@ int main() {
                     printf("| ----------------  \n");
                     
                     //verifikasi email
+                    if (strcmp(email, "") == 0) {
+                        printf("\n\nEmail tidak boleh kosong!\n");
+                        
+                        goto lanjut_ke_email_linkaja;
+                    }
+                    
                     if (strstr(email, "@gmail.com") || strstr(email, "@yahoo.com") || strstr(email, "@outlook.com")) {
                         goto lanjut_ke_password_linkaja_setelah_email;
                     } else {
@@ -1171,7 +1258,7 @@ int main() {
                         goto awal_masukkan_email_linkaja;
                     }
                     
-                    lanjut_ke_password_linkaja_setelah_email:
+                    lanjut_ke_password_linkaja:
 
                     loadingDisplay();
 
@@ -1252,6 +1339,7 @@ int main() {
                     break;
                 }
             default:
+            //kalau milih opsi metode pembayaran yang ga ada
             
             
                 printf("\n\n\n");
