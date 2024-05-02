@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <time.h>
 
+
 double total_harga;
 double bayar;
 char inputVoucher[50];
@@ -179,7 +180,7 @@ int main() {
     bayar = 0.00;
     total_harga = 0.00;
 
-
+    printf("\n\n===========================================================================================\n\n");
 
     printf("   _      _      _      _      _      _      _      _      _      _      _      _   \n");
     printf(" _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_  _( )_\n");
@@ -274,8 +275,10 @@ int main() {
     /*
     SEBELUM LOGIN/SIGNUP
     */
+    
+    printf("\n\n===========================================================================================\n\n");
 
-   loadingDisplay();
+   
 
     printf("\n _                _            __  ____         __ _               ___ \n");
     printf("| |    ___   __ _(_)_ __      / / |  _ \\  __ _ / _| |_ __ _ _ __  |__ \\\n");
@@ -293,10 +296,17 @@ int main() {
     mau_login_signup[strcspn(mau_login_signup, "\n")] = '\0';
     printf("| ------------ \n");
     
+    
+    
+
+    
+    
     if (strcmp(mau_login_signup, "d") == '\0' ) {
         
         loadingDisplay();
-
+        
+        
+        printf("\n\n===========================================================================================\n\n");
         printf("\n\n _____                                                    \n");
         printf("|  ___|__  _ __ _ __ ___                                  \n");
         printf("| |_ / _ \\| '__| '_ ` _ \\                                 \n");
@@ -358,6 +368,9 @@ int main() {
         
         loadingDisplay();
         
+        printf("\n\n===========================================================================================\n\n");
+
+        
         printf("\n\n+-------------------------------------------------+\n");
         printf("| __  __                _        __ _             |\n");
         printf("||  \\/  | ___ _ __   __| | __ _ / _| |_ __ _ _ __ |\n");
@@ -369,6 +382,9 @@ int main() {
         printf("|| |_) |  __/ |  | | | | (_| \\__ \\ | |            |\n");
         printf("||____/ \\___|_|  |_| |_|\\__,_|___/_|_|            |\n");
         printf("+-------------------------------------------------+\n");
+        
+        printf("\n\n===========================================================================================\n\n");
+
 
         
         goto start_program_after_signup;
@@ -383,7 +399,8 @@ int main() {
     start_program_after_login:
     
     printf("\n");
-    loadingDisplay();
+    printf("\n\n===========================================================================================\n\n");
+
     
     /*Loading displayer end*/
     
@@ -393,11 +410,18 @@ int main() {
     struct CartItem cart[20];
     int cartSize = 0;
     
-    
-    
-    
-    
     printf("\n\n\n");
+    
+    printf(" _     ___   ____ ___ _   _ \n");
+    printf("| |   / _ \\ / ___|_ _| \\ | |\n");
+    printf("| |  | | | | |  _ | ||  \\| |\n");
+    printf("| |__| |_| | |_| || || |\\  |\n");
+    printf("|_____\\___/ \\____|___|_| \\_|\n\n\n");
+    
+    
+    
+    loadingDisplay();
+    
     
         printf(" __  __    _    ____  _   _ _  ___  __    _    _   _                                                   \n");
     printf("|  \\/  |  / \\  / ___|| | | | |/ / |/ /   / \\  | \\ | |                                                  \n");
@@ -474,7 +498,8 @@ int main() {
     if (strcmp(user.password, fixPassword) == 0) {
         
         
-        
+    printf("\n\n===========================================================================================\n\n");
+    
         
         
         
@@ -486,6 +511,9 @@ int main() {
     printf("||_____|\\___/ \\__, |_|_| |_| |____/ \\___|_|  |_| |_|\\__,_|___/_|_|\n");
     printf("|            |___/                                               |\n");
     printf("+----------------------------------------------------------------+\n\n\n");
+    
+    printf("\n\n===========================================================================================\n\n");
+
 
 
         
@@ -500,7 +528,7 @@ int main() {
             /*Loading displayer start*/
     
             printf("\n");
-            loadingDisplay();
+            //loadingDisplay();
             printf("\n");
             
             
@@ -687,6 +715,9 @@ int main() {
         
         /*Loading displayer end*/
         
+        printf("\n\n===========================================================================================\n\n");
+
+        
 
         printf("\n\n\n+-----------------------------------------------+\n");
         printf("| _  __                     _                   |\n");
@@ -725,7 +756,11 @@ int main() {
         
         
         /*Loading displayer end*/
-    
+        
+        printf("\n\n===========================================================================================\n\n");
+
+    printf("\n\n===========================================================================================\n\n");
+
     //masukkin voucher
     printf("| ----------------------------  \n");
     printf("| Silahkan masukkan voucher yang anda punya (masukkan \"skip\" jika anda tidak punya voucher): ");
@@ -746,6 +781,10 @@ int main() {
         
         printf("\nMohon maaf, voucher anda tidak valid.\n");
     }
+    
+    masukkan_metode_pembayaran:
+    printf("\n\n===========================================================================================\n\n");
+
         
         
         printf("\n\n\n");
@@ -783,7 +822,10 @@ int main() {
            
             case 1:
             //pembayaran Visa
-                {
+                {   
+                    
+                    printf("\n\n===========================================================================================\n\n");
+
                     //cek apakah berhak kena potong harga atau engga
                     if(strcmp(inputVoucher, "fishingClub2024") == 0) {
         
@@ -909,6 +951,9 @@ int main() {
                     printf("\nPembayaran dengan Visa berhasil!\n");
 
                     displayReceipt(cart, cartSize); 
+                    
+                    printf("\n\n===========================================================================================\n\n");
+
 
                     break;
                 }
@@ -919,6 +964,7 @@ int main() {
             case 2:
             //pembayaran mastercard 
                 {   
+                    printf("\n\n===========================================================================================\n\n");
                     
                     //cek apakah berhak kena potong harga atau engga
                     if(strcmp(inputVoucher, "fishingClub2024") == 0) {
@@ -1034,12 +1080,17 @@ int main() {
                     printf("\nPembayaran dengan MasterCard berhasil!\n");
 
                     displayReceipt(cart, cartSize); 
+                    
+                    printf("\n\n===========================================================================================\n\n");
+
 
                     break;
                 }
             case 3:
             //pembayaran Dana
                 {   
+                    printf("\n\n===========================================================================================\n\n");
+
                     
                     //cek apakah berhak kena potong harga atau engga
                     if(strcmp(inputVoucher, "fishingClub2024") == 0) {
@@ -1198,12 +1249,18 @@ int main() {
                     printf("\nPembayaran dengan Dana berhasil!\n");
 
                     displayReceipt(cart, cartSize); 
+                    
+                    printf("\n\n===========================================================================================\n\n");
+
 
                     break;
                 }
             case 4:
             //pembayaran Linkaja
                 {   
+                    
+                    printf("\n\n===========================================================================================\n\n");
+
                     
                     //cek apakah berhak kena potong harga atau engga
                     if(strcmp(inputVoucher, "fishingClub2024") == 0) {
@@ -1374,19 +1431,22 @@ int main() {
 
                     displayReceipt(cart, cartSize); 
                     
+                    printf("\n\n===========================================================================================\n\n");
 
                     break;
                 }
             default:
             //kalau milih opsi metode pembayaran yang ga ada
+                
+                loadingDisplay();
             
-            
-                printf("\n\n\n");
+                printf("\n\n===========================================================================================\n\n");
+
                 
                 /*Loading displayer start*/
     
-                loadingDisplay();
-                printf("\n");
+                // loadingDisplay();
+                // printf("\n");
                 
                 /*Loading displayer end*/
         
@@ -1407,6 +1467,13 @@ int main() {
                 
                 
                 printf("Mohon maaf, anda memilih pilihan metode pembayaran yang tidak ada :(\n");
+                
+                loadingDisplay();
+                
+                printf("\n\n===========================================================================================\n\n");
+                
+                goto masukkan_metode_pembayaran;
+                
                 break;
         }
     }
@@ -1414,6 +1481,9 @@ int main() {
         
         
         gagal_login:
+        
+        printf("\n\n===========================================================================================\n\n");
+
         
         printf("  +-------------------------------------------------------------+\n");
         printf("  | _                _                                 _      __|\n");
@@ -1426,9 +1496,13 @@ int main() {
         
         
         printf("\nLogin gagal. Pastikan input password atau email anda sudah benar!\n");
+        
+        printf("\n\n===========================================================================================\n\n");
+
     }
 
     return 0;
 }
 
  
+
