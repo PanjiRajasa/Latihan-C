@@ -81,7 +81,8 @@ int pilihSignUp_Login() {
 // Fungsi untuk game rekomendasi
 void displayRecommendedGames() {
 
-
+    
+    printf("\n\n");
 
     printf("| ---------------------------------------- |\n");
     printf("|          Game Rekomendasi:               |\n");
@@ -536,7 +537,7 @@ int main() {
 
 
             /*Loading displayer end*/
-
+            
             printf("\n\n\n+---------------------------------------------------------------+\n");
             printf("|  ____                                                         |\n");
             printf("| / ___| __ _ _ __ ___   ___                                    |\n");
@@ -561,7 +562,7 @@ int main() {
 
             /*Loading displayer end*/
 
-
+            mau_beli_rekomen_or_ga:
             displayRecommendedGames();
 
             printf("\nApakah Anda ingin membeli game rekomendasi? (y/n): ");
@@ -601,5 +602,4 @@ int main() {
                     {"Elden Ring"},
                     {"Destiny 2"},
                     {"Rust"},
-                    {"Monster Hunter: World"},
-                    {"Supermarket: to
+             
