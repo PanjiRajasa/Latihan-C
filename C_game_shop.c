@@ -60,6 +60,8 @@ void loadingDisplay() {
     fflush(stdout);
 
     sleep(1);
+    
+    sleep(1);
 
 
 
@@ -385,7 +387,7 @@ int main() {
 
         printf("\n\n===========================================================================================\n\n");
 
-
+        loadingDisplay();
 
         goto start_program_after_signup;
 
