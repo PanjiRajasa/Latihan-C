@@ -44,19 +44,18 @@ void loadingDisplay() {
 
     sleep(1);
 
-    printf("\n.");
+    printf("\n");
 
     fflush(stdout);
 
     sleep(1);
 
-    printf(".");
+    printf(" \n");
 
     fflush(stdout);
 
     sleep(1);
 
-    printf(".\n\n");
 
     fflush(stdout);
 
@@ -82,7 +81,6 @@ int pilihSignUp_Login() {
 void displayRecommendedGames() {
 
     
-    printf("\n\n");
 
     printf("| ---------------------------------------- |\n");
     printf("|          Game Rekomendasi:               |\n");
@@ -549,7 +547,7 @@ int main() {
             printf("|| '__/ _ \\ |/ / _ \\| '_ ` _ \\ / _ \\ '_ \\ / _` |/ _` / __| | / /|\n");
             printf("|| | |  __/   < (_) | | | | | |  __/ | | | (_| | (_| \\__ \\ ||_| |\n");
             printf("||_|  \\___|_|\\_\\___/|_| |_| |_|\\___|_| |_|\\__,_|\\__,_|___/_|(_) |\n");
-            printf("+---------------------------------------------------------------+\n\n\n");
+            printf("+---------------------------------------------------------------+\n");
 
 
 
